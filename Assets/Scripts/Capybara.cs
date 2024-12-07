@@ -7,13 +7,13 @@ public class Capybara : MonoBehaviour
 {
     [Header ("ATRIBUTOS DA CAPIVARA")]
 
-    [SerializeField] protected string capName; // caso de tempo de customizar o nome
-    [SerializeField] protected string type; // elemento
-    [SerializeField] protected float health; // vida
-    [SerializeField] protected float strenght; // força no ataque
-    [SerializeField] protected float speed; // pra ver quem inicia na batalha
-    [SerializeField] protected float weaknessMultiplier = 1; // critico de fraqueza MULTIPLICA
-    [SerializeField] protected float resistenceMultiplier = 1; // resistencia DIVIDE
+    public string capybaraName; // caso de tempo de customizar o nome
+    public string type; // elemento
+    public float health; // vida
+    public float strenght; // força no ataque
+    public float speed; // pra ver quem inicia na batalha
+    public float weaknessMultiplier = 1; // critico de fraqueza MULTIPLICA
+    public float resistenceMultiplier = 1; // resistencia DIVIDE
 
     protected bool isFainted;
     protected bool isBurned;

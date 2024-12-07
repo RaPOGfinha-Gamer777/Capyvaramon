@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &286492879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 286492881}
+  - component: {fileID: 286492880}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &286492880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286492879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902de2019e54f294ca2800b83353cb01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allCapybaras: []
+--- !u!4 &286492881
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286492879}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.9513909, y: -0.10617608, z: -0.010799677}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &370415389
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,9 +503,10 @@ GameObject:
   - component: {fileID: 1157431544}
   - component: {fileID: 1157431543}
   - component: {fileID: 1157431542}
+  - component: {fileID: 1157431545}
   m_Layer: 3
-  m_Name: CapivaraFogo
-  m_TagString: Capivara
+  m_Name: Capivara_Fogo
+  m_TagString: CapivaraFogo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -577,6 +623,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1157431545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157431541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10591ad5165ecd44da26fe64872e81b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capybaraName: 
+  type: 
+  health: 0
+  strenght: 0
+  speed: 0
+  weaknessMultiplier: 1
+  resistenceMultiplier: 1
 --- !u!1 &1825242590
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,9 +653,10 @@ GameObject:
   - component: {fileID: 1825242593}
   - component: {fileID: 1825242592}
   - component: {fileID: 1825242591}
+  - component: {fileID: 1825242594}
   m_Layer: 3
-  m_Name: CapivaraAgua
-  m_TagString: Capivara
+  m_Name: Capivara_Agua
+  m_TagString: CapivaraAgua
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -707,6 +773,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1825242594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825242590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10591ad5165ecd44da26fe64872e81b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capybaraName: 
+  type: 
+  health: 0
+  strenght: 0
+  speed: 0
+  weaknessMultiplier: 1
+  resistenceMultiplier: 1
 --- !u!1 &1831050483
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,7 +966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae756f38d4d06e64e976d4a498623a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capybaraName: 
+  dataName: 
 --- !u!1 &2124269887
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,9 +978,10 @@ GameObject:
   - component: {fileID: 2124269890}
   - component: {fileID: 2124269889}
   - component: {fileID: 2124269888}
+  - component: {fileID: 2124269891}
   m_Layer: 3
-  m_Name: CapivaraPlanta
-  m_TagString: Capivara
+  m_Name: Capivara_Planta
+  m_TagString: CapivaraPlanta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1012,6 +1098,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2124269891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124269887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10591ad5165ecd44da26fe64872e81b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capybaraName: 
+  type: 
+  health: 0
+  strenght: 0
+  speed: 0
+  weaknessMultiplier: 1
+  resistenceMultiplier: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1024,3 +1129,4 @@ SceneRoots:
   - {fileID: 1825242593}
   - {fileID: 1831050486}
   - {fileID: 2063695728}
+  - {fileID: 286492881}

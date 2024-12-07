@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WildData : MonoBehaviour
 {
-    public string capybaraName;
+    public string dataName;
 
     private void Awake()
     {
@@ -13,6 +13,11 @@ public class WildData : MonoBehaviour
 
     public void Teste(RaycastHit2D wildCapivara)
     {
-        capybaraName = wildCapivara.collider.gameObject.name;
+        Capybara other = wildCapivara.collider.gameObject.GetComponent<Capybara>();
+
+        if (other != null)
+        {
+            dataName = other.capybaraName;
+        }
     }
 }

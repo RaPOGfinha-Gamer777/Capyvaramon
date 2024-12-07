@@ -45,7 +45,7 @@ public class Movement : MonoBehaviour
 
         if (hit.collider != null)
         {
-            if (hit.collider.tag == "Capivara")
+            if (hit.collider.tag.Contains("Capivara"))
             {
                 SaveCapybaraData(hit);
             }          
