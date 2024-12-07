@@ -99,8 +99,19 @@ public class WildData : MonoBehaviour
             else if (dataType == "Ghost")
             {
                 instantiatedCapybara = Resources.Load<GameObject>("CapivaraFantasma");
-                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara);
+                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara, new Vector3(5.52f, 1.78f, 0), Quaternion.identity); // posicao do inimigo na tela
             }            
+        }
+
+        if (scene.name == "TestesRafa")
+        {
+            dataName = null;
+            dataType = null;
+            dataHealth = 0;
+            dataStrenght = 0;
+            dataSpeed = 0;
+            dataWeaknessMultiplier = 0;
+            dataResistenceMultiplier = 0;
         }
     }
 }

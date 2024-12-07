@@ -25,6 +25,12 @@ public class Capybara : MonoBehaviour
         if (IsCurrentScene("TestesBatalha"))
         {
             this.capybaraName = WildData.instance.dataName;
+            this.type = WildData.instance.dataType;
+            this.health = WildData.instance.dataHealth;
+            this.strenght = WildData.instance.dataStrenght;
+            this.speed = WildData.instance.dataSpeed;
+            this.weaknessMultiplier = WildData.instance.dataWeaknessMultiplier;
+            this.resistenceMultiplier = WildData.instance.dataResistenceMultiplier;
         }
     }
 
