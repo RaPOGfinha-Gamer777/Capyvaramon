@@ -1,0 +1,60 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Movement : MonoBehaviour
+{
+    public float tileSize = 1f;
+    public float moveSpeed = 5f;
+
+    public LayerMask obstacleLayer;
+
+    private bool isMoving = false;
+    private Vector3 targetPosition; 
+
+    private void Start()
+    {
+        targetPosition = transform.position;
+    }
+
+    private void Update()
+    {
+        if (isMoving) return;
+
+        Vector3 input = Vector3.zero;
+
+        if (Input.GetKey(KeyCode.W)) input = Vector3.up;
+        if (Input.GetKey(KeyCode.S)) input = Vector3.down;
+        if (Input.GetKey(KeyCode.A)) input = Vector3.left;
+        if (Input.GetKey(KeyCode.D)) input = Vector3.right;
+
+        if (input != Vector3.zero && CanMove(input))
+        {
+            StartCoroutine(MoveToTile(input));
+        }
+    }
+
+    private bool CanMove(Vector3 direction)
+    {
+        Vector3 nextPosition = transform.position + direction * tileSize;
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, tileSize, obstacleLayer);
+
+        return hit.collider == null;
+    }
+
+    private IEnumerator MoveToTile(Vector3 direction)
+    {
+        isMoving = true;
+        targetPosition = transform.position + direction * tileSize;
+
+        while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        transform.position = targetPosition;
+        isMoving = false;
+    }
+}
