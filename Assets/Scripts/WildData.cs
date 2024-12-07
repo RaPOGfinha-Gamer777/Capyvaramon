@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class WildData : MonoBehaviour
 {
+    public static WildData instance;
+
     public string dataName;
     public string dataType;
     public int dataHealth;
@@ -13,9 +15,19 @@ public class WildData : MonoBehaviour
     public int dataWeaknessMultiplier;
     public int dataResistenceMultiplier;
 
+    private GameObject instantiatedCapybara;
+
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Teste(RaycastHit2D wildCapivara)
@@ -50,45 +62,45 @@ public class WildData : MonoBehaviour
         {
             if (dataType == "Water")
             {
-                GameObject obj = Resources.Load<GameObject>("CapivaraAgua");
-                if (obj != null) Instantiate(obj);
+                instantiatedCapybara = Resources.Load<GameObject>("CapivaraAgua");
+                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara);
             }
 
             else if (dataType == "Fire")
             {
-                GameObject obj = Resources.Load<GameObject>("CapivaraFogo");
-                if (obj != null) Instantiate(obj);
+                instantiatedCapybara = Resources.Load<GameObject>("CapivaraFogo");
+                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara);
             }
 
             else if (dataType == "Grass")
             {
-                GameObject obj = Resources.Load<GameObject>("CapivaraPlanta");
-                if (obj != null) Instantiate(obj);
+                instantiatedCapybara = Resources.Load<GameObject>("CapivaraPlanta");
+                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara);
             }
 
             else if (dataType == "Normal")
             {
-                GameObject obj = Resources.Load<GameObject>("CapivaraNormal");
-                if (obj != null) Instantiate(obj);
+                instantiatedCapybara = Resources.Load<GameObject>("CapivaraNormal");
+                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara);
             }
 
             else if (dataType == "Fairy")
             {
-                GameObject obj = Resources.Load<GameObject>("CapivaraFada");
-                if (obj != null) Instantiate(obj);
+                instantiatedCapybara = Resources.Load<GameObject>("CapivaraFada");
+                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara);
             }
 
             else if (dataType == "Psychic")
             {
-                GameObject obj = Resources.Load<GameObject>("CapivaraPsiquica");
-                if (obj != null) Instantiate(obj);
+                instantiatedCapybara = Resources.Load<GameObject>("CapivaraPsiquica");
+                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara);
             }
 
             else if (dataType == "Ghost")
             {
-                GameObject obj = Resources.Load<GameObject>("CapivaraFantasma");
-                if (obj != null) Instantiate(obj);
-            }
+                instantiatedCapybara = Resources.Load<GameObject>("CapivaraFantasma");
+                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara);
+            }            
         }
     }
 }

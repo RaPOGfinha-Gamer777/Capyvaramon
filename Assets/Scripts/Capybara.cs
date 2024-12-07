@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class Capybara : MonoBehaviour
 {
@@ -19,6 +20,18 @@ public class Capybara : MonoBehaviour
     protected bool isBurned;
     protected bool isParalyzed;
 
+    private void OnEnable()
+    {
+        if (IsCurrentScene("TestesBatalha"))
+        {
+            this.capybaraName = WildData.instance.dataName;
+        }
+    }
+
+    private bool IsCurrentScene(string sceneName)
+    {
+        return SceneManager.GetActiveScene().name == sceneName;
+    }
 
     public virtual void Attack()
     {

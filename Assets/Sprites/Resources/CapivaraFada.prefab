@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8355064478940240314}
   - component: {fileID: 1614674617623232620}
+  - component: {fileID: 4870552661628539613}
   m_Layer: 0
   m_Name: CapivaraFada
   m_TagString: Untagged
@@ -84,3 +85,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4870552661628539613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2714175990530639923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10591ad5165ecd44da26fe64872e81b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capybaraName: 
+  type: 
+  health: 0
+  strenght: 0
+  speed: 0
+  weaknessMultiplier: 1
+  resistenceMultiplier: 1
