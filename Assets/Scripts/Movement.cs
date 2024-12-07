@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -40,6 +43,14 @@ public class Movement : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, tileSize, obstacleLayer);
 
+        if (hit.collider != null)
+        {
+            if (hit.collider.tag == "Capivara")
+            {
+                SaveCapybaraData(hit);
+            }          
+        }
+
         return hit.collider == null;
     }
 
@@ -56,5 +67,18 @@ public class Movement : MonoBehaviour
 
         transform.position = targetPosition;
         isMoving = false;
+    }
+
+    void SaveCapybaraData(RaycastHit2D capybaraCollider)
+    {
+        WildData wildData = FindAnyObjectByType<WildData>();
+        wildData.Teste(capybaraCollider);
+
+        LoadBattleScene();
+    }
+
+    void LoadBattleScene()
+    {
+        SceneManager.LoadScene("TestesBatalha");
     }
 }
