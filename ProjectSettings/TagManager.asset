@@ -7,6 +7,10 @@ TagManager:
   - CapivaraAgua
   - CapivaraPlanta
   - CapivaraFogo
+  - CapivaraNormal
+  - CapivaraFada
+  - CapivaraPsiquica
+  - CapivaraFantasma
   layers:
   - Default
   - TransparentFX
