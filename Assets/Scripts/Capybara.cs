@@ -9,11 +9,11 @@ public class Capybara : MonoBehaviour
 
     public string capybaraName; // caso de tempo de customizar o nome
     public string type; // elemento
-    public float health; // vida
-    public float strenght; // força no ataque
-    public float speed; // pra ver quem inicia na batalha
-    public float weaknessMultiplier = 1; // critico de fraqueza MULTIPLICA
-    public float resistenceMultiplier = 1; // resistencia DIVIDE
+    public int health; // vida
+    public int strenght; // força no ataque
+    public int speed; // pra ver quem inicia na batalha
+    public int weaknessMultiplier = 1; // critico de fraqueza MULTIPLICA
+    public int resistenceMultiplier = 1; // resistencia DIVIDE
 
     protected bool isFainted;
     protected bool isBurned;
@@ -25,7 +25,7 @@ public class Capybara : MonoBehaviour
         if (isParalyzed || isFainted) return;
     }
 
-    public virtual void TakingDamage(float damage)
+    public virtual void TakingDamage(int damage)
     {
         health -= (strenght * weaknessMultiplier) / resistenceMultiplier;
         isFainted = health <= 0;
