@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
+    public GameObject inventoy;
+
     public float tileSize = 1f;
     public float moveSpeed = 5f;
 
@@ -22,19 +24,22 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-        if (isMoving) return;
-
-        Vector3 input = Vector3.zero;
-
-        if (Input.GetKey(KeyCode.W)) input = Vector3.up;
-        if (Input.GetKey(KeyCode.S)) input = Vector3.down;
-        if (Input.GetKey(KeyCode.A)) input = Vector3.left;
-        if (Input.GetKey(KeyCode.D)) input = Vector3.right;
-
-        if (input != Vector3.zero && CanMove(input))
+        if (!inventoy.activeSelf)
         {
-            StartCoroutine(MoveToTile(input));
-        }
+            if (isMoving) return;
+
+            Vector3 input = Vector3.zero;
+
+            if (Input.GetKey(KeyCode.W)) input = Vector3.up;
+            if (Input.GetKey(KeyCode.S)) input = Vector3.down;
+            if (Input.GetKey(KeyCode.A)) input = Vector3.left;
+            if (Input.GetKey(KeyCode.D)) input = Vector3.right;
+
+            if (input != Vector3.zero && CanMove(input))
+            {
+                StartCoroutine(MoveToTile(input));
+            }
+        }    
     }
 
     private bool CanMove(Vector3 direction)
