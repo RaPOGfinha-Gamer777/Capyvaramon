@@ -9,6 +9,7 @@ public class WildData : MonoBehaviour
 
     public string dataName;
     public string dataType;
+    public string dataState;
     public int dataHealth;
     public int dataStrenght;
     public int dataSpeed;
@@ -38,6 +39,7 @@ public class WildData : MonoBehaviour
         {
             dataName = other.capybaraName;
             dataType = other.type;
+            dataState = other.state;
             dataHealth = other.health;
             dataStrenght = other.strenght;
             dataSpeed = other.speed;

@@ -105,6 +105,8 @@ public class GameController : MonoBehaviour
             {
                 SetGhostStats(cap);
             }
+
+            cap.state = "Wild";
         }
     }
 
