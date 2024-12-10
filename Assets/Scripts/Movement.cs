@@ -15,7 +15,7 @@ public class Movement : MonoBehaviour
     public LayerMask obstacleLayer;
 
     private bool isMoving = false;
-    private Vector3 targetPosition; 
+    private Vector3 targetPosition;
 
     private void Start()
     {

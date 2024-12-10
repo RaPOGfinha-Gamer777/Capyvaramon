@@ -2241,6 +2241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
+  state: 
   health: 0
   strenght: 0
   speed: 0
@@ -2630,6 +2631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
+  state: 
   health: 0
   strenght: 0
   speed: 0
@@ -3925,6 +3927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
+  state: 
   health: 0
   strenght: 0
   speed: 0
@@ -4329,6 +4332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
+  state: 
   health: 0
   strenght: 0
   speed: 0
@@ -4479,6 +4483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
+  state: 
   health: 0
   strenght: 0
   speed: 0
@@ -4763,6 +4768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
+  state: 
   health: 0
   strenght: 0
   speed: 0
@@ -5717,6 +5723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
+  state: 
   health: 0
   strenght: 0
   speed: 0
@@ -6266,6 +6273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
+  state: 
   health: 0
   strenght: 0
   speed: 0
@@ -6416,6 +6424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
+  state: 
   health: 0
   strenght: 0
   speed: 0
@@ -7583,6 +7592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
+  state: 
   health: 0
   strenght: 0
   speed: 0
@@ -8211,6 +8221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
+  state: 
   health: 0
   strenght: 0
   speed: 0
@@ -9015,6 +9026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
+  state: 
   health: 0
   strenght: 0
   speed: 0
@@ -9303,6 +9315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
+  state: 
   health: 0
   strenght: 0
   speed: 0
@@ -9940,6 +9953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
+  state: 
   health: 0
   strenght: 0
   speed: 0
@@ -10090,6 +10104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
+  state: 
   health: 0
   strenght: 0
   speed: 0
@@ -10452,6 +10467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
+  state: 
   health: 0
   strenght: 0
   speed: 0
@@ -10689,6 +10705,55 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &2005629733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2005629735}
+  - component: {fileID: 2005629734}
+  m_Layer: 0
+  m_Name: PlayerData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2005629734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005629733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73318ccdfa1dfcc4d8cc17c2848ce514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: 
+  characterType: 
+  characterXP: 0
+  capybarasInTeam: []
+  allCapybaras: []
+--- !u!4 &2005629735
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005629733}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2663358, y: 0.03364189, z: 0.0027000776}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2008461695
 GameObject:
   m_ObjectHideFlags: 0
@@ -10989,6 +11054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataName: 
   dataType: 
+  dataState: 
   dataHealth: 0
   dataStrenght: 0
   dataSpeed: 0
@@ -11273,6 +11339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
+  state: 
   health: 0
   strenght: 0
   speed: 0
@@ -11492,3 +11559,4 @@ SceneRoots:
   - {fileID: 319798384}
   - {fileID: 680010825}
   - {fileID: 2063695728}
+  - {fileID: 2005629735}
