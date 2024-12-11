@@ -34,23 +34,6 @@ public class Capybara : MonoBehaviour
         return SceneManager.GetActiveScene().name == sceneName;
     }
 
-    public virtual void Attack()
-    {
-        if (isParalyzed || isFainted) return;
-    }
-
-    public virtual void TakingDamage(int damage)
-    {
-        health -= (strenght * weaknessMultiplier) / resistenceMultiplier;
-        isFainted = health <= 0;
-        if (isFainted) KnockOut();
-    }
-
-    public virtual void KnockOut()
-    {
-        Debug.Log(gameObject.name + " foi nocauteado!");
-    }
-
     void SetWildStats()
     {
         this.capybaraName = WildData.instance.dataName;

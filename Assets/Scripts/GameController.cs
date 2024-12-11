@@ -73,109 +73,56 @@ public class GameController : MonoBehaviour
         {
             if (cap.gameObject.tag == "CapivaraFogo")
             {
-                SetFireStats(cap);
+                SetCapybaraStats(cap, fireMinHP, fireMaxHP, fireMinStrenght, fireMaxStrenght, fireMinSpeed, fireMaxSpeed);
             }
 
             else if (cap.gameObject.tag == "CapivaraAgua")
             {
-                SetWaterStats(cap);
+                SetCapybaraStats(cap, waterMinHP, waterMaxHP, waterMinStrenght, waterMaxStrenght, waterMinSpeed, waterMaxSpeed);
             }
 
             else if (cap.gameObject.tag == "CapivaraPlanta")
             {
-                SetGrassStats(cap);
+                SetCapybaraStats(cap, grassMinHP, grassMaxHP, grassMinStrenght, grassMaxStrenght, grassMinSpeed, grassMaxSpeed);
             }
 
             else if (cap.gameObject.tag == "CapivaraNormal")
             {
-                SetNormalStats(cap);
+                SetCapybaraStats(cap, normalMinHP, normalMaxHP, normalMinStrenght, normalMaxStrenght, normalMinSpeed, normalMaxSpeed);
             }
 
             else if (cap.gameObject.tag == "CapivaraFada")
             {
-                SetFairyStats(cap);
+                SetCapybaraStats(cap, fairyMinHP, fairyMaxHP, fairyMinStrenght, fairyMaxStrenght, fairyMinSpeed, fairyMaxSpeed);
             }
 
             else if (cap.gameObject.tag == "CapivaraPsiquica")
             {
-                SetPsyStats(cap);
+                SetCapybaraStats(cap, psyMinHP, psyMaxHP, psyMinStrenght, psyMaxStrenght, psyMinSpeed, psyMaxSpeed);
             }
 
             else if (cap.gameObject.tag == "CapivaraFantasma")
             {
-                SetGhostStats(cap);
+                SetCapybaraStats(cap, ghostMinHP, ghostMaxHP, ghostMinStrenght, ghostMaxStrenght, ghostMinSpeed, ghostMaxSpeed);
             }
-
+            
             cap.state = "Wild";
+            
         }
+    }
+
+    void SetCapybaraStats(Capybara cap, int hpMin, int hpMax, int strenghtMin, int strenghtMax, int speedMin, int speedMax)
+    {
+        cap.capybaraName = "Jorge";
+        cap.type = "Bug";
+        cap.health = CalculateRandomStats(hpMin, hpMax);
+        cap.strenght = CalculateRandomStats(strenghtMin, strenghtMax);
+        cap.speed = CalculateRandomStats(speedMin, speedMax);
     }
 
     int CalculateRandomStats(int minValue, int maxValue)
     {
         int value = Random.Range(minValue, maxValue + 1);
         return value;
-    }
-
-    void SetFireStats(Capybara capybara)
-    {
-        capybara.capybaraName = "Capivara de Fogo";
-        capybara.type = "Fire";
-        capybara.health = CalculateRandomStats(fireMinHP, fireMaxHP);
-        capybara.strenght = CalculateRandomStats(fireMinStrenght, fireMaxStrenght);
-        capybara.speed = CalculateRandomStats(fireMinSpeed, fireMaxSpeed);
-    }
-
-    void SetWaterStats(Capybara capybara)
-    {
-        capybara.capybaraName = "Capivara de Água";
-        capybara.type = "Water";
-        capybara.health = CalculateRandomStats(waterMinHP, waterMaxHP);
-        capybara.strenght = CalculateRandomStats(waterMinStrenght, waterMaxStrenght);
-        capybara.speed = CalculateRandomStats(waterMinSpeed, waterMaxSpeed);
-    }
-
-    void SetGrassStats(Capybara capybara)
-    {
-        capybara.capybaraName = "Capivara de Planta";
-        capybara.type = "Grass";
-        capybara.health = CalculateRandomStats(grassMinHP, grassMaxHP);
-        capybara.strenght = CalculateRandomStats(grassMinStrenght, grassMaxStrenght);
-        capybara.speed = CalculateRandomStats(grassMinSpeed, grassMaxSpeed);
-    }
-
-    void SetNormalStats(Capybara capybara)
-    {
-        capybara.capybaraName = "Capivara Normal";
-        capybara.type = "Normal";
-        capybara.health = CalculateRandomStats(normalMinHP, normalMaxHP);
-        capybara.strenght = CalculateRandomStats(normalMinStrenght, normalMaxStrenght);
-        capybara.speed = CalculateRandomStats(normalMinSpeed, normalMaxSpeed);
-    }
-
-    void SetFairyStats(Capybara capybara)
-    {
-        capybara.capybaraName = "Capivara Fada";
-        capybara.type = "Fairy";
-        capybara.health = CalculateRandomStats(fairyMinHP, fairyMaxHP);
-        capybara.strenght = CalculateRandomStats(fairyMinStrenght, fairyMaxStrenght);
-        capybara.speed = CalculateRandomStats(fairyMinSpeed, fairyMaxSpeed);
-    }
-
-    void SetPsyStats(Capybara capybara)
-    {
-        capybara.capybaraName = "Capivara Psiquica";
-        capybara.type = "Psychic";
-        capybara.health = CalculateRandomStats(fairyMinHP, fairyMaxHP);
-        capybara.strenght = CalculateRandomStats(fairyMinStrenght, fairyMaxStrenght);
-        capybara.speed = CalculateRandomStats(fairyMinSpeed, fairyMaxSpeed);
-    }
-
-    void SetGhostStats(Capybara capybara)
-    {
-        capybara.capybaraName = "Capivara Fantasma";
-        capybara.type = "Ghost";
-        capybara.health = CalculateRandomStats(ghostMinHP, ghostMaxHP);
-        capybara.strenght = CalculateRandomStats(ghostMinStrenght, ghostMaxStrenght);
-        capybara.speed = CalculateRandomStats(ghostMinSpeed, ghostMaxSpeed);
     }
 }
