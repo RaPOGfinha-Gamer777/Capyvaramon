@@ -107,14 +107,11 @@ public class GameController : MonoBehaviour
             }
             
             cap.state = "Wild";
-            
         }
     }
 
     void SetCapybaraStats(Capybara cap, int hpMin, int hpMax, int strenghtMin, int strenghtMax, int speedMin, int speedMax)
     {
-        cap.capybaraName = "Jorge";
-        cap.type = "Bug";
         cap.health = CalculateRandomStats(hpMin, hpMax);
         cap.strenght = CalculateRandomStats(strenghtMin, strenghtMax);
         cap.speed = CalculateRandomStats(speedMin, speedMax);
@@ -124,5 +121,19 @@ public class GameController : MonoBehaviour
     {
         int value = Random.Range(minValue, maxValue + 1);
         return value;
+    }
+
+    int CalculateXP()
+    {
+        int rng = Random.Range(0, 3); // chance da capivara spawnar com level mais alto
+
+        if (rng == 0)
+        {
+
+        }
+        else
+        {
+
+        }
     }
 }

@@ -17,6 +17,9 @@ public class Capybara : MonoBehaviour
     public int weaknessMultiplier = 1; // critico de fraqueza MULTIPLICA
     public int resistenceMultiplier = 1; // resistencia DIVIDE
 
+    public int capybaraXP;
+    public int capybaraLevel;
+
     protected bool isFainted;
     protected bool isBurned;
     protected bool isParalyzed;
