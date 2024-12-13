@@ -4,13 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - CapivaraAgua
-  - CapivaraPlanta
-  - CapivaraFogo
-  - CapivaraNormal
-  - CapivaraFada
-  - CapivaraPsiquica
-  - CapivaraFantasma
+  - FireCapybara
+  - WaterCapybara
+  - GrassCapybara
+  - NormalCapybara
+  - FairyCapybara
+  - PsychicCapybara
+  - GhostCapybara
   layers:
   - Default
   - TransparentFX

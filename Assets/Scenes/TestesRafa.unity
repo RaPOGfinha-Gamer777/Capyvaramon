@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 18601956}
   - component: {fileID: 18601958}
   m_Layer: 5
-  m_Name: Capivara1
+  m_Name: Capybara_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 39625856}
   - component: {fileID: 39625858}
   m_Layer: 5
-  m_Name: Capivara2
+  m_Name: Capybara_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 39714683}
   - component: {fileID: 39714685}
   m_Layer: 5
-  m_Name: Capivara7
+  m_Name: Capybara_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -630,7 +630,7 @@ GameObject:
   - component: {fileID: 80893863}
   - component: {fileID: 80893865}
   m_Layer: 5
-  m_Name: Capivara9
+  m_Name: Capybara_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1017,6 +1017,7 @@ MonoBehaviour:
   ghostMaxStrenght: 90
   ghostMinSpeed: 110
   ghostMaxSpeed: 130
+  xpNeededToLevelUp: 25
   allCapybaras: []
 --- !u!4 &286492881
 Transform:
@@ -1232,7 +1233,7 @@ GameObject:
   - component: {fileID: 367276763}
   - component: {fileID: 367276765}
   m_Layer: 5
-  m_Name: Capivara2
+  m_Name: Capybara_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1538,7 +1539,7 @@ GameObject:
   - component: {fileID: 387674171}
   - component: {fileID: 387674173}
   m_Layer: 5
-  m_Name: Capivara1
+  m_Name: Capybara_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1967,7 +1968,7 @@ GameObject:
   - component: {fileID: 447186805}
   - component: {fileID: 447186807}
   m_Layer: 5
-  m_Name: Capivara1
+  m_Name: Capybara_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2221,8 +2222,8 @@ GameObject:
   - component: {fileID: 509554999}
   - component: {fileID: 509555002}
   m_Layer: 3
-  m_Name: Capivara_Fantasma
-  m_TagString: CapivaraFantasma
+  m_Name: Ghost_Capybara
+  m_TagString: GhostCapybara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2359,6 +2360,9 @@ MonoBehaviour:
   speed: 0
   weaknessMultiplier: 1
   resistenceMultiplier: 1
+  capybaraXP: 0
+  capybaraLevel: 0
+  capybaraTotalXP: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2478,7 +2482,7 @@ GameObject:
   - component: {fileID: 530444047}
   - component: {fileID: 530444046}
   m_Layer: 5
-  m_Name: Button_Equipe
+  m_Name: Button_Team
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2611,8 +2615,8 @@ GameObject:
   - component: {fileID: 533044518}
   - component: {fileID: 533044521}
   m_Layer: 3
-  m_Name: Capivara_Planta (2)
-  m_TagString: CapivaraPlanta
+  m_Name: Grass_Capybara
+  m_TagString: GrassCapybara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2749,6 +2753,9 @@ MonoBehaviour:
   speed: 0
   weaknessMultiplier: 1
   resistenceMultiplier: 1
+  capybaraXP: 0
+  capybaraLevel: 0
+  capybaraTotalXP: 0
 --- !u!1 &537554872
 GameObject:
   m_ObjectHideFlags: 0
@@ -2896,7 +2903,7 @@ GameObject:
   - component: {fileID: 599559765}
   - component: {fileID: 599559767}
   m_Layer: 5
-  m_Name: Capivara2
+  m_Name: Capybara_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3016,7 +3023,7 @@ GameObject:
   - component: {fileID: 602366104}
   - component: {fileID: 602366106}
   m_Layer: 5
-  m_Name: Capivara5
+  m_Name: Capybara_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3547,7 +3554,7 @@ GameObject:
   - component: {fileID: 691169174}
   - component: {fileID: 691169176}
   m_Layer: 5
-  m_Name: Capivara12
+  m_Name: Capybara_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3667,7 +3674,7 @@ GameObject:
   - component: {fileID: 704122746}
   - component: {fileID: 704122748}
   m_Layer: 5
-  m_Name: Capivara4
+  m_Name: Capybara_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3787,7 +3794,7 @@ GameObject:
   - component: {fileID: 729706037}
   - component: {fileID: 729706039}
   m_Layer: 5
-  m_Name: Capivara12
+  m_Name: Capybara_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3907,8 +3914,8 @@ GameObject:
   - component: {fileID: 778963318}
   - component: {fileID: 778963321}
   m_Layer: 3
-  m_Name: Capivara_Psiquico
-  m_TagString: CapivaraPsiquica
+  m_Name: Psychic_Capybara
+  m_TagString: PsychicCapybara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4045,6 +4052,9 @@ MonoBehaviour:
   speed: 0
   weaknessMultiplier: 1
   resistenceMultiplier: 1
+  capybaraXP: 0
+  capybaraLevel: 0
+  capybaraTotalXP: 0
 --- !u!1 &780509049
 GameObject:
   m_ObjectHideFlags: 0
@@ -4192,7 +4202,7 @@ GameObject:
   - component: {fileID: 790622523}
   - component: {fileID: 790622525}
   m_Layer: 5
-  m_Name: Capivara8
+  m_Name: Capybara_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4312,8 +4322,8 @@ GameObject:
   - component: {fileID: 818889755}
   - component: {fileID: 818889758}
   m_Layer: 3
-  m_Name: Capivara_Planta (1)
-  m_TagString: CapivaraPlanta
+  m_Name: Grass_Capybara
+  m_TagString: GrassCapybara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4450,6 +4460,9 @@ MonoBehaviour:
   speed: 0
   weaknessMultiplier: 1
   resistenceMultiplier: 1
+  capybaraXP: 0
+  capybaraLevel: 0
+  capybaraTotalXP: 0
 --- !u!1 &844582749
 GameObject:
   m_ObjectHideFlags: 0
@@ -4463,8 +4476,8 @@ GameObject:
   - component: {fileID: 844582751}
   - component: {fileID: 844582754}
   m_Layer: 3
-  m_Name: Capivara_Fantasma (1)
-  m_TagString: CapivaraFantasma
+  m_Name: Ghost_Capybara
+  m_TagString: GhostCapybara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4601,6 +4614,9 @@ MonoBehaviour:
   speed: 0
   weaknessMultiplier: 1
   resistenceMultiplier: 1
+  capybaraXP: 0
+  capybaraLevel: 0
+  capybaraTotalXP: 0
 --- !u!1 &860647407
 GameObject:
   m_ObjectHideFlags: 0
@@ -4613,7 +4629,7 @@ GameObject:
   - component: {fileID: 860647410}
   - component: {fileID: 860647409}
   m_Layer: 5
-  m_Name: CapidexInfo_Text
+  m_Name: CaptydexInfo_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4748,8 +4764,8 @@ GameObject:
   - component: {fileID: 878115733}
   - component: {fileID: 878115736}
   m_Layer: 3
-  m_Name: Capivara_Fada
-  m_TagString: CapivaraFada
+  m_Name: Fairy_Capybara
+  m_TagString: FairyCapybara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4886,6 +4902,9 @@ MonoBehaviour:
   speed: 0
   weaknessMultiplier: 1
   resistenceMultiplier: 1
+  capybaraXP: 0
+  capybaraLevel: 0
+  capybaraTotalXP: 0
 --- !u!1 &882891720
 GameObject:
   m_ObjectHideFlags: 0
@@ -4983,7 +5002,7 @@ GameObject:
   - component: {fileID: 891184881}
   - component: {fileID: 891184883}
   m_Layer: 5
-  m_Name: Capivara6
+  m_Name: Capybara_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5103,7 +5122,7 @@ GameObject:
   - component: {fileID: 973694660}
   - component: {fileID: 973694662}
   m_Layer: 5
-  m_Name: Capivara4
+  m_Name: Capybara_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5223,7 +5242,7 @@ GameObject:
   - component: {fileID: 1046912622}
   - component: {fileID: 1046912624}
   m_Layer: 5
-  m_Name: Capivara8
+  m_Name: Capybara_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5340,7 +5359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1090255713}
   m_Layer: 0
-  m_Name: Capivaras
+  m_Name: Capybaras
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5471,7 +5490,7 @@ GameObject:
   - component: {fileID: 1144228619}
   - component: {fileID: 1144228621}
   m_Layer: 5
-  m_Name: Capivara3
+  m_Name: Capybara_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5591,8 +5610,8 @@ GameObject:
   - component: {fileID: 1157431542}
   - component: {fileID: 1157431545}
   m_Layer: 3
-  m_Name: Capivara_Fogo
-  m_TagString: CapivaraFogo
+  m_Name: Fire_Capybara
+  m_TagString: FireCapybara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5729,6 +5748,9 @@ MonoBehaviour:
   speed: 0
   weaknessMultiplier: 1
   resistenceMultiplier: 1
+  capybaraXP: 0
+  capybaraLevel: 0
+  capybaraTotalXP: 0
 --- !u!1 &1190994111
 GameObject:
   m_ObjectHideFlags: 0
@@ -5892,7 +5914,7 @@ GameObject:
   - component: {fileID: 1281773688}
   - component: {fileID: 1281773690}
   m_Layer: 5
-  m_Name: Capivara11
+  m_Name: Capybara_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6012,7 +6034,7 @@ GameObject:
   - component: {fileID: 1282534992}
   - component: {fileID: 1282534994}
   m_Layer: 5
-  m_Name: Capivara3
+  m_Name: Capybara_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6253,8 +6275,8 @@ GameObject:
   - component: {fileID: 1291152185}
   - component: {fileID: 1291152188}
   m_Layer: 3
-  m_Name: Capivara_Fogo (1)
-  m_TagString: CapivaraFogo
+  m_Name: Fire_Capybara
+  m_TagString: FireCapybara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6391,6 +6413,9 @@ MonoBehaviour:
   speed: 0
   weaknessMultiplier: 1
   resistenceMultiplier: 1
+  capybaraXP: 0
+  capybaraLevel: 0
+  capybaraTotalXP: 0
 --- !u!1 &1312357530
 GameObject:
   m_ObjectHideFlags: 0
@@ -6404,8 +6429,8 @@ GameObject:
   - component: {fileID: 1312357532}
   - component: {fileID: 1312357535}
   m_Layer: 3
-  m_Name: Capivara_Fantasma (2)
-  m_TagString: CapivaraFantasma
+  m_Name: Ghost_Capybara
+  m_TagString: GhostCapybara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6542,6 +6567,9 @@ MonoBehaviour:
   speed: 0
   weaknessMultiplier: 1
   resistenceMultiplier: 1
+  capybaraXP: 0
+  capybaraLevel: 0
+  capybaraTotalXP: 0
 --- !u!1 &1317021110
 GameObject:
   m_ObjectHideFlags: 0
@@ -6934,7 +6962,7 @@ GameObject:
   - component: {fileID: 1352597821}
   - component: {fileID: 1352597820}
   m_Layer: 5
-  m_Name: Button_Capidex
+  m_Name: Button_Capydex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7067,7 +7095,7 @@ GameObject:
   - component: {fileID: 1359274318}
   - component: {fileID: 1359274320}
   m_Layer: 5
-  m_Name: Capivara7
+  m_Name: Capybara_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7452,7 +7480,7 @@ GameObject:
   - component: {fileID: 1486748962}
   - component: {fileID: 1486748964}
   m_Layer: 5
-  m_Name: Capivara10
+  m_Name: Capybara_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7572,8 +7600,8 @@ GameObject:
   - component: {fileID: 1511530714}
   - component: {fileID: 1511530717}
   m_Layer: 3
-  m_Name: Capivara_Normal
-  m_TagString: CapivaraNormal
+  m_Name: Normal_Capybara
+  m_TagString: NormalCapybara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7710,6 +7738,9 @@ MonoBehaviour:
   speed: 0
   weaknessMultiplier: 1
   resistenceMultiplier: 1
+  capybaraXP: 0
+  capybaraLevel: 0
+  capybaraTotalXP: 0
 --- !u!1 &1517660681
 GameObject:
   m_ObjectHideFlags: 0
@@ -7856,7 +7887,7 @@ GameObject:
   - component: {fileID: 1568708994}
   - component: {fileID: 1568708996}
   m_Layer: 5
-  m_Name: Capivara6
+  m_Name: Capybara_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8201,8 +8232,8 @@ GameObject:
   - component: {fileID: 1705898940}
   - component: {fileID: 1705898943}
   m_Layer: 3
-  m_Name: Capivara_Fada (1)
-  m_TagString: CapivaraFada
+  m_Name: Fairy_Capybara
+  m_TagString: FairyCapybara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8339,6 +8370,9 @@ MonoBehaviour:
   speed: 0
   weaknessMultiplier: 1
   resistenceMultiplier: 1
+  capybaraXP: 0
+  capybaraLevel: 0
+  capybaraTotalXP: 0
 --- !u!1 &1753645748
 GameObject:
   m_ObjectHideFlags: 0
@@ -8654,7 +8688,7 @@ GameObject:
   - component: {fileID: 1784466072}
   - component: {fileID: 1784466074}
   m_Layer: 5
-  m_Name: Capivara10
+  m_Name: Capybara_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8774,7 +8808,7 @@ GameObject:
   - component: {fileID: 1792001181}
   - component: {fileID: 1792001183}
   m_Layer: 5
-  m_Name: Capivara5
+  m_Name: Capybara_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8894,8 +8928,8 @@ GameObject:
   - component: {fileID: 1825242591}
   - component: {fileID: 1825242594}
   m_Layer: 3
-  m_Name: Capivara_Agua
-  m_TagString: CapivaraAgua
+  m_Name: Water_Capybara
+  m_TagString: WaterCapybara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9032,6 +9066,9 @@ MonoBehaviour:
   speed: 0
   weaknessMultiplier: 1
   resistenceMultiplier: 1
+  capybaraXP: 0
+  capybaraLevel: 0
+  capybaraTotalXP: 0
 --- !u!1 &1831050483
 GameObject:
   m_ObjectHideFlags: 0
@@ -9175,7 +9212,7 @@ GameObject:
   - component: {fileID: 1837773226}
   - component: {fileID: 1837773228}
   m_Layer: 5
-  m_Name: Capivara11
+  m_Name: Capybara_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9295,8 +9332,8 @@ GameObject:
   - component: {fileID: 1840240070}
   - component: {fileID: 1840240073}
   m_Layer: 3
-  m_Name: Capivara_Agua (1)
-  m_TagString: CapivaraAgua
+  m_Name: Water_Capybara
+  m_TagString: WaterCapybara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9433,6 +9470,9 @@ MonoBehaviour:
   speed: 0
   weaknessMultiplier: 1
   resistenceMultiplier: 1
+  capybaraXP: 0
+  capybaraLevel: 0
+  capybaraTotalXP: 0
 --- !u!1 &1858669713
 GameObject:
   m_ObjectHideFlags: 0
@@ -9579,7 +9619,7 @@ GameObject:
   - component: {fileID: 1877498473}
   - component: {fileID: 1877498472}
   m_Layer: 5
-  m_Name: Button_Capivara
+  m_Name: Button_Capybara
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9845,7 +9885,7 @@ GameObject:
   - component: {fileID: 1884655224}
   - component: {fileID: 1884655223}
   m_Layer: 5
-  m_Name: Capidex
+  m_Name: Capydex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9933,8 +9973,8 @@ GameObject:
   - component: {fileID: 1885369419}
   - component: {fileID: 1885369422}
   m_Layer: 3
-  m_Name: Capivara_Normal (1)
-  m_TagString: CapivaraNormal
+  m_Name: Normal_Capybara
+  m_TagString: NormalCapybara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10071,6 +10111,9 @@ MonoBehaviour:
   speed: 0
   weaknessMultiplier: 1
   resistenceMultiplier: 1
+  capybaraXP: 0
+  capybaraLevel: 0
+  capybaraTotalXP: 0
 --- !u!1 &1888775917
 GameObject:
   m_ObjectHideFlags: 0
@@ -10084,8 +10127,8 @@ GameObject:
   - component: {fileID: 1888775919}
   - component: {fileID: 1888775922}
   m_Layer: 3
-  m_Name: Capivara_Agua (2)
-  m_TagString: CapivaraAgua
+  m_Name: Water_Capybara
+  m_TagString: WaterCapybara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10222,6 +10265,9 @@ MonoBehaviour:
   speed: 0
   weaknessMultiplier: 1
   resistenceMultiplier: 1
+  capybaraXP: 0
+  capybaraLevel: 0
+  capybaraTotalXP: 0
 --- !u!1 &1934481552
 GameObject:
   m_ObjectHideFlags: 0
@@ -10447,8 +10493,8 @@ GameObject:
   - component: {fileID: 1995128700}
   - component: {fileID: 1995128703}
   m_Layer: 3
-  m_Name: Capivara_Psiquico (1)
-  m_TagString: CapivaraPsiquica
+  m_Name: Psychic_Capybara
+  m_TagString: PsychicCapybara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10585,6 +10631,9 @@ MonoBehaviour:
   speed: 0
   weaknessMultiplier: 1
   resistenceMultiplier: 1
+  capybaraXP: 0
+  capybaraLevel: 0
+  capybaraTotalXP: 0
 --- !u!1 &2001212949
 GameObject:
   m_ObjectHideFlags: 0
@@ -10598,7 +10647,7 @@ GameObject:
   - component: {fileID: 2001212951}
   - component: {fileID: 2001212953}
   m_Layer: 5
-  m_Name: Capivara9
+  m_Name: Capybara_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10852,7 +10901,7 @@ GameObject:
   - component: {fileID: 2034094128}
   - component: {fileID: 2034094130}
   m_Layer: 5
-  m_Name: Capivara3
+  m_Name: Capybara_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11158,8 +11207,8 @@ GameObject:
   - component: {fileID: 2124269888}
   - component: {fileID: 2124269891}
   m_Layer: 3
-  m_Name: Capivara_Planta
-  m_TagString: CapivaraPlanta
+  m_Name: Grass_Capybara
+  m_TagString: GrassCapybara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11296,6 +11345,9 @@ MonoBehaviour:
   speed: 0
   weaknessMultiplier: 1
   resistenceMultiplier: 1
+  capybaraXP: 0
+  capybaraLevel: 0
+  capybaraTotalXP: 0
 --- !u!1 &2127748188
 GameObject:
   m_ObjectHideFlags: 0

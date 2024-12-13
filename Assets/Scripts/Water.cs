@@ -6,7 +6,7 @@ public class Water : Capybara
 {
     private void Start()
     {
-        this.capybaraName = "Capivara de Água";
+        this.capybaraName = "Water Capybara";
         this.type = "Water";
     }
 }

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class Capybara : MonoBehaviour
 {
-    [Header ("ATRIBUTOS DA CAPIVARA")]
+    [Header ("CAPYBARAS' STATS")]
 
     public string capybaraName; // caso de tempo de customizar o nome
     public string type; // elemento
@@ -17,8 +18,8 @@ public class Capybara : MonoBehaviour
     public int weaknessMultiplier = 1; // critico de fraqueza MULTIPLICA
     public int resistenceMultiplier = 1; // resistencia DIVIDE
 
+    public int capybaraLevel = 1;
     public int capybaraXP;
-    public int capybaraLevel;
 
     protected bool isFainted;
     protected bool isBurned;
@@ -29,6 +30,15 @@ public class Capybara : MonoBehaviour
         if (IsCurrentScene("TestesBatalha"))
         {
             if (WildData.instance.dataState == "Wild") SetWildStats();
+        }
+    }
+
+    public void CalculateEarnedXp() // acionar esse metodo ao ganhar xp em batalhas
+    {
+        while (this.capybaraXP >= 25)
+        {
+            this.capybaraXP -= 25;
+            this.capybaraLevel++;
         }
     }
 

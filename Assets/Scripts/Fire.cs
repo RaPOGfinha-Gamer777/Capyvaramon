@@ -6,7 +6,7 @@ public class Fire : Capybara
 {
     private void Start()
     {
-        this.capybaraName = "Capivara de Fogo";
+        this.capybaraName = "Fire Capybara";
         this.type = "Fire";
     }
 }

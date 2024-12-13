@@ -6,7 +6,7 @@ public class Psychic : Capybara
 {
     private void Start()
     {
-        this.capybaraName = "Capivara Psiquica";
+        this.capybaraName = "Psychic Capybara";
         this.type = "Psychic";
     }
 }

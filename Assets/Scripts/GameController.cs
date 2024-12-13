@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
@@ -5,9 +6,9 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    [Header("ATRIBUTOS AO SPAWNAR")]
+    [Header("SPAWN STATS")]
 
-    [Header("FOGO")]
+    [Header("FIRE")]
     [SerializeField] private int fireMinHP;
     [SerializeField] private int fireMaxHP;
     [SerializeField] private int fireMinStrenght;
@@ -15,7 +16,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private int fireMinSpeed;
     [SerializeField] private int fireMaxSpeed;
 
-    [Header("ÁGUA")]
+    [Header("WATER")]
     [SerializeField] private int waterMinHP;
     [SerializeField] private int waterMaxHP;
     [SerializeField] private int waterMinStrenght;
@@ -23,7 +24,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private int waterMinSpeed;
     [SerializeField] private int waterMaxSpeed;
 
-    [Header("PLANTA")]
+    [Header("GRASS")]
     [SerializeField] private int grassMinHP;
     [SerializeField] private int grassMaxHP;
     [SerializeField] private int grassMinStrenght;
@@ -39,7 +40,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private int normalMinSpeed;
     [SerializeField] private int normalMaxSpeed;
 
-    [Header("FADA")]
+    [Header("FAIRY")]
     [SerializeField] private int fairyMinHP;
     [SerializeField] private int fairyMaxHP;
     [SerializeField] private int fairyMinStrenght;
@@ -47,7 +48,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private int fairyMinSpeed;
     [SerializeField] private int fairyMaxSpeed;
 
-    [Header("PSIQUICA")]
+    [Header("PSYCHIC")]
     [SerializeField] private int psyMinHP;
     [SerializeField] private int psyMaxHP;
     [SerializeField] private int psyMinStrenght;
@@ -55,7 +56,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private int psyMinSpeed;
     [SerializeField] private int psyMaxSpeed;
 
-    [Header("FANTAMSA")]
+    [Header("GHOST")]
     [SerializeField] private int ghostMinHP;
     [SerializeField] private int ghostMaxHP;
     [SerializeField] private int ghostMinStrenght;
@@ -63,7 +64,12 @@ public class GameController : MonoBehaviour
     [SerializeField] private int ghostMinSpeed;
     [SerializeField] private int ghostMaxSpeed;
 
+    [Header("GENERAL")]
+    [SerializeField] private int xpNeededToLevelUp;
+
     public Capybara[] allCapybaras;
+
+    public int level;
 
     void Start()
     {
@@ -71,42 +77,43 @@ public class GameController : MonoBehaviour
 
         foreach (var cap in allCapybaras)
         {
-            if (cap.gameObject.tag == "CapivaraFogo")
+            if (cap.gameObject.tag == "FireCapybara")
             {
                 SetCapybaraStats(cap, fireMinHP, fireMaxHP, fireMinStrenght, fireMaxStrenght, fireMinSpeed, fireMaxSpeed);
             }
 
-            else if (cap.gameObject.tag == "CapivaraAgua")
+            else if (cap.gameObject.tag == "WaterCapybara")
             {
                 SetCapybaraStats(cap, waterMinHP, waterMaxHP, waterMinStrenght, waterMaxStrenght, waterMinSpeed, waterMaxSpeed);
             }
 
-            else if (cap.gameObject.tag == "CapivaraPlanta")
+            else if (cap.gameObject.tag == "GrassCapybara")
             {
                 SetCapybaraStats(cap, grassMinHP, grassMaxHP, grassMinStrenght, grassMaxStrenght, grassMinSpeed, grassMaxSpeed);
             }
 
-            else if (cap.gameObject.tag == "CapivaraNormal")
+            else if (cap.gameObject.tag == "NormalCapybara")
             {
                 SetCapybaraStats(cap, normalMinHP, normalMaxHP, normalMinStrenght, normalMaxStrenght, normalMinSpeed, normalMaxSpeed);
             }
 
-            else if (cap.gameObject.tag == "CapivaraFada")
+            else if (cap.gameObject.tag == "FairyCapybara")
             {
                 SetCapybaraStats(cap, fairyMinHP, fairyMaxHP, fairyMinStrenght, fairyMaxStrenght, fairyMinSpeed, fairyMaxSpeed);
             }
 
-            else if (cap.gameObject.tag == "CapivaraPsiquica")
+            else if (cap.gameObject.tag == "PsychicCapybara")
             {
                 SetCapybaraStats(cap, psyMinHP, psyMaxHP, psyMinStrenght, psyMaxStrenght, psyMinSpeed, psyMaxSpeed);
             }
 
-            else if (cap.gameObject.tag == "CapivaraFantasma")
+            else if (cap.gameObject.tag == "GhostCapybara")
             {
                 SetCapybaraStats(cap, ghostMinHP, ghostMaxHP, ghostMinStrenght, ghostMaxStrenght, ghostMinSpeed, ghostMaxSpeed);
             }
             
             cap.state = "Wild";
+            CalculateSpawnXP(cap);
         }
     }
 
@@ -123,17 +130,44 @@ public class GameController : MonoBehaviour
         return value;
     }
 
-    int CalculateXP()
+    void CalculateSpawnXP(Capybara cap)
     {
-        int rng = Random.Range(0, 3); // chance da capivara spawnar com level mais alto
+        int firstRng = Random.Range(1, 101); // chance da capivara spawnar com um nivel mais alto
+        int xp;
+        int level = 1;
 
-        if (rng == 0)
+        if (firstRng <= 55)
         {
-
+            xp = Random.Range(0, 50);
+        }
+        else if (firstRng <= 55 + 25)
+        {
+            xp = Random.Range(50, 100);
+        }
+        else if (firstRng <= 80 + 12)
+        {
+            xp = Random.Range(100, 150);
+        }
+        else if (firstRng <= 92 + 5)
+        {
+            xp = Random.Range(150, 200);
+        }
+        else if (firstRng <= 97 + 2)
+        {
+            xp = Random.Range(200, 250);
         }
         else
         {
-
+            xp = Random.Range(250, 300);
         }
+
+        while (xp >= 25)
+        {
+            xp -= 25;
+            level++;
+        }
+
+        cap.capybaraLevel = level;
+        cap.capybaraXP = xp;
     }
 }

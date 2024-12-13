@@ -6,7 +6,7 @@ public class Grass : Capybara
 {
     private void Start()
     {
-        this.capybaraName = "Capivara de Grama";
+        this.capybaraName = "Grass Capybara";
         this.type = "Grass";
     }
 }
