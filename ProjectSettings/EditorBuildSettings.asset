@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestesRafa.unity
+    path: Assets/Scenes/GameScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/TestesBatalha.unity
+    path: Assets/Scenes/BattleScene.unity
     guid: 4ad819ceb1b19f045b5f81931cbf386f
   m_configObjects: {}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class WildData : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class WildData : MonoBehaviour
     public int dataSpeed;
     public int dataWeaknessMultiplier;
     public int dataResistenceMultiplier;
+
+    public bool dataCanUseFirstAttack;
+    public bool dataCanUseSecondAttack;
+    public bool dataCanUseThirdAttack;
+    public bool dataCanUseFourthAttack;
 
     private GameObject instantiatedCapybara;
 
@@ -31,7 +37,7 @@ public class WildData : MonoBehaviour
         }
     }
 
-    public void Teste(RaycastHit2D wildCapivara)
+    public void GetCapybaraStats(RaycastHit2D wildCapivara)
     {
         Capybara other = wildCapivara.collider.gameObject.GetComponent<Capybara>();
 
@@ -44,7 +50,12 @@ public class WildData : MonoBehaviour
             dataStrenght = other.strenght;
             dataSpeed = other.speed;
             dataWeaknessMultiplier = other.weaknessMultiplier;
-            dataResistenceMultiplier = other.resistenceMultiplier;
+            dataResistenceMultiplier = other.resistence;
+
+            dataCanUseFirstAttack = other.canUseFirstAttack;
+            dataCanUseSecondAttack = other.canUseSecondAttack;
+            dataCanUseThirdAttack = other.canUseThirdAttack;
+            dataCanUseFourthAttack = other.canUseFourthAttack;
         }
     }
 
@@ -60,7 +71,7 @@ public class WildData : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "TestesBatalha")
+        if (scene.name == "BattleScene")
         {
             if (dataType == "Water")
             {
@@ -105,15 +116,21 @@ public class WildData : MonoBehaviour
             }            
         }
 
-        if (scene.name == "TestesRafa")
+        if (scene.name == "GameScene")
         {
             dataName = null;
             dataType = null;
+            dataState = null;
             dataHealth = 0;
             dataStrenght = 0;
             dataSpeed = 0;
             dataWeaknessMultiplier = 0;
             dataResistenceMultiplier = 0;
+
+            dataCanUseFirstAttack = false;
+            dataCanUseSecondAttack = false;
+            dataCanUseThirdAttack = false;
+            dataCanUseFourthAttack = false;
         }
     }
 }

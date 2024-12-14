@@ -77,13 +77,13 @@ public class Movement : MonoBehaviour
     void SaveCapybaraData(RaycastHit2D capybaraCollider)
     {
         WildData wildData = FindAnyObjectByType<WildData>();
-        wildData.Teste(capybaraCollider);
+        wildData.GetCapybaraStats(capybaraCollider);
 
         LoadBattleScene();
     }
 
     void LoadBattleScene()
     {
-        SceneManager.LoadScene("TestesBatalha");
+        SceneManager.LoadScene("BattleScene");
     }
 }

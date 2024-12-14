@@ -10,7 +10,7 @@ public class T : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("TestesRafa");
+            SceneManager.LoadScene("GameScene");
         }
     }
 }

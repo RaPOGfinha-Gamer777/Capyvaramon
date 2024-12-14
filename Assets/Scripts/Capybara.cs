@@ -16,7 +16,7 @@ public class Capybara : MonoBehaviour
     public int strenght; // força no ataque
     public int speed; // pra ver quem inicia na batalha
     public int weaknessMultiplier = 1; // critico de fraqueza MULTIPLICA
-    public int resistenceMultiplier = 1; // resistencia DIVIDE
+    public int resistence = 0; // resistencia SUBTRAI
 
     public int capybaraLevel = 1;
     public int capybaraXP;
@@ -25,22 +25,82 @@ public class Capybara : MonoBehaviour
     protected bool isBurned;
     protected bool isParalyzed;
 
+    protected string firstAttackName;
+    protected string secondAttackName;
+    protected string thirdAttackName;
+    protected string fourthAttackName;
+
+    public bool canUseFirstAttack;
+    public bool canUseSecondAttack;
+    public bool canUseThirdAttack;
+    public bool canUseFourthAttack;
+
     private void OnEnable()
     {
-        if (IsCurrentScene("TestesBatalha"))
+        if (IsCurrentScene("BattleScene"))
         {
-            if (WildData.instance.dataState == "Wild") SetWildStats();
+            if (WildData.instance.dataState == "Wild")
+            {
+                SetWildStats();
+            }
         }
     }
 
-    public void CalculateEarnedXp() // acionar esse metodo ao ganhar xp em batalhas
+    // /////////////////////////////////////////////////////////////////////////
+
+    protected virtual void UseFirstAttack()
+    {
+        if (isFainted || isParalyzed || !canUseFirstAttack) return;
+    }
+
+    protected virtual void UseSecondAttack()
+    {
+        if (isFainted || isParalyzed || !canUseSecondAttack) return;
+    }
+
+    protected virtual void UseThirdAttack()
+    {
+        if (isFainted || isParalyzed || !canUseThirdAttack) return;
+    }
+
+    protected virtual void UseFourthAttack()
+    {
+        if (isFainted || isParalyzed || !canUseFirstAttack) return;
+    }
+
+    protected virtual void TakeDamage(int  damage)
+    {
+        health -= (damage * weaknessMultiplier) - resistence;
+        isFainted = health <= 0;
+    }
+
+    // ////////////////////////////////////////////////////////////////////////////////
+
+    public void AddXP(int xpGainded)
+    {
+        this.capybaraXP += xpGainded;
+        CalculateEarnedXp();
+    }
+
+    protected void CalculateEarnedXp() // acionar esse metodo ao ganhar xp em batalhas
     {
         while (this.capybaraXP >= 25)
         {
             this.capybaraXP -= 25;
             this.capybaraLevel++;
         }
+        CheckAvailableAttacks();
     }
+
+    protected void CheckAvailableAttacks()
+    {
+        if (this.capybaraLevel >= 1) this.canUseFirstAttack = true;
+        if (this.capybaraLevel >= 5) this.canUseSecondAttack = true;
+        if (this.capybaraLevel >= 15) this.canUseThirdAttack = true;
+        if (this.capybaraLevel >= 35) this.canUseFourthAttack = true;
+    }
+
+    // /////////////////////////////////////////////////////////////////////////////////
 
     private bool IsCurrentScene(string sceneName)
     {
@@ -56,6 +116,11 @@ public class Capybara : MonoBehaviour
         this.strenght = WildData.instance.dataStrenght;
         this.speed = WildData.instance.dataSpeed;
         this.weaknessMultiplier = WildData.instance.dataWeaknessMultiplier;
-        this.resistenceMultiplier = WildData.instance.dataResistenceMultiplier;
+        this.resistence = WildData.instance.dataResistenceMultiplier;
+
+        this.canUseFirstAttack = WildData.instance.dataCanUseFirstAttack;
+        this.canUseSecondAttack = WildData.instance.dataCanUseSecondAttack;
+        this.canUseThirdAttack = WildData.instance.dataCanUseThirdAttack;
+        this.canUseFourthAttack = WildData.instance.dataCanUseFourthAttack;
     }
 }
