@@ -1019,6 +1019,7 @@ MonoBehaviour:
   ghostMaxSpeed: 130
   xpNeededToLevelUp: 25
   allCapybaras: []
+  level: 0
 --- !u!4 &286492881
 Transform:
   m_ObjectHideFlags: 0
@@ -2209,6 +2210,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491193326}
   m_CullTransparentMesh: 1
+--- !u!1 &498401698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 498401700}
+  - component: {fileID: 498401699}
+  m_Layer: 0
+  m_Name: Player_Data
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &498401699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498401698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2744cfdb7d6b3614ba66838642a3b5b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &498401700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498401698}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.37490636, y: 0.030085705, z: 0.0040501026}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &509554997
 GameObject:
   m_ObjectHideFlags: 0
@@ -2359,10 +2404,13 @@ MonoBehaviour:
   strenght: 0
   speed: 0
   weaknessMultiplier: 1
-  resistenceMultiplier: 1
-  capybaraXP: 0
+  resistence: 0
   capybaraLevel: 0
-  capybaraTotalXP: 0
+  capybaraXP: 0
+  canUseFirstAttack: 0
+  canUseSecondAttack: 0
+  canUseThirdAttack: 0
+  canUseFourthAttack: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2752,10 +2800,13 @@ MonoBehaviour:
   strenght: 0
   speed: 0
   weaknessMultiplier: 1
-  resistenceMultiplier: 1
-  capybaraXP: 0
+  resistence: 0
   capybaraLevel: 0
-  capybaraTotalXP: 0
+  capybaraXP: 0
+  canUseFirstAttack: 0
+  canUseSecondAttack: 0
+  canUseThirdAttack: 0
+  canUseFourthAttack: 0
 --- !u!1 &537554872
 GameObject:
   m_ObjectHideFlags: 0
@@ -4051,10 +4102,13 @@ MonoBehaviour:
   strenght: 0
   speed: 0
   weaknessMultiplier: 1
-  resistenceMultiplier: 1
-  capybaraXP: 0
+  resistence: 0
   capybaraLevel: 0
-  capybaraTotalXP: 0
+  capybaraXP: 0
+  canUseFirstAttack: 0
+  canUseSecondAttack: 0
+  canUseThirdAttack: 0
+  canUseFourthAttack: 0
 --- !u!1 &780509049
 GameObject:
   m_ObjectHideFlags: 0
@@ -4459,10 +4513,13 @@ MonoBehaviour:
   strenght: 0
   speed: 0
   weaknessMultiplier: 1
-  resistenceMultiplier: 1
-  capybaraXP: 0
+  resistence: 0
   capybaraLevel: 0
-  capybaraTotalXP: 0
+  capybaraXP: 0
+  canUseFirstAttack: 0
+  canUseSecondAttack: 0
+  canUseThirdAttack: 0
+  canUseFourthAttack: 0
 --- !u!1 &844582749
 GameObject:
   m_ObjectHideFlags: 0
@@ -4613,10 +4670,13 @@ MonoBehaviour:
   strenght: 0
   speed: 0
   weaknessMultiplier: 1
-  resistenceMultiplier: 1
-  capybaraXP: 0
+  resistence: 0
   capybaraLevel: 0
-  capybaraTotalXP: 0
+  capybaraXP: 0
+  canUseFirstAttack: 0
+  canUseSecondAttack: 0
+  canUseThirdAttack: 0
+  canUseFourthAttack: 0
 --- !u!1 &860647407
 GameObject:
   m_ObjectHideFlags: 0
@@ -4901,10 +4961,13 @@ MonoBehaviour:
   strenght: 0
   speed: 0
   weaknessMultiplier: 1
-  resistenceMultiplier: 1
-  capybaraXP: 0
+  resistence: 0
   capybaraLevel: 0
-  capybaraTotalXP: 0
+  capybaraXP: 0
+  canUseFirstAttack: 0
+  canUseSecondAttack: 0
+  canUseThirdAttack: 0
+  canUseFourthAttack: 0
 --- !u!1 &882891720
 GameObject:
   m_ObjectHideFlags: 0
@@ -5747,10 +5810,13 @@ MonoBehaviour:
   strenght: 0
   speed: 0
   weaknessMultiplier: 1
-  resistenceMultiplier: 1
-  capybaraXP: 0
+  resistence: 0
   capybaraLevel: 0
-  capybaraTotalXP: 0
+  capybaraXP: 0
+  canUseFirstAttack: 0
+  canUseSecondAttack: 0
+  canUseThirdAttack: 0
+  canUseFourthAttack: 0
 --- !u!1 &1190994111
 GameObject:
   m_ObjectHideFlags: 0
@@ -6412,10 +6478,13 @@ MonoBehaviour:
   strenght: 0
   speed: 0
   weaknessMultiplier: 1
-  resistenceMultiplier: 1
-  capybaraXP: 0
+  resistence: 0
   capybaraLevel: 0
-  capybaraTotalXP: 0
+  capybaraXP: 0
+  canUseFirstAttack: 0
+  canUseSecondAttack: 0
+  canUseThirdAttack: 0
+  canUseFourthAttack: 0
 --- !u!1 &1312357530
 GameObject:
   m_ObjectHideFlags: 0
@@ -6566,10 +6635,13 @@ MonoBehaviour:
   strenght: 0
   speed: 0
   weaknessMultiplier: 1
-  resistenceMultiplier: 1
-  capybaraXP: 0
+  resistence: 0
   capybaraLevel: 0
-  capybaraTotalXP: 0
+  capybaraXP: 0
+  canUseFirstAttack: 0
+  canUseSecondAttack: 0
+  canUseThirdAttack: 0
+  canUseFourthAttack: 0
 --- !u!1 &1317021110
 GameObject:
   m_ObjectHideFlags: 0
@@ -7737,10 +7809,13 @@ MonoBehaviour:
   strenght: 0
   speed: 0
   weaknessMultiplier: 1
-  resistenceMultiplier: 1
-  capybaraXP: 0
+  resistence: 0
   capybaraLevel: 0
-  capybaraTotalXP: 0
+  capybaraXP: 0
+  canUseFirstAttack: 0
+  canUseSecondAttack: 0
+  canUseThirdAttack: 0
+  canUseFourthAttack: 0
 --- !u!1 &1517660681
 GameObject:
   m_ObjectHideFlags: 0
@@ -8369,10 +8444,13 @@ MonoBehaviour:
   strenght: 0
   speed: 0
   weaknessMultiplier: 1
-  resistenceMultiplier: 1
-  capybaraXP: 0
+  resistence: 0
   capybaraLevel: 0
-  capybaraTotalXP: 0
+  capybaraXP: 0
+  canUseFirstAttack: 0
+  canUseSecondAttack: 0
+  canUseThirdAttack: 0
+  canUseFourthAttack: 0
 --- !u!1 &1753645748
 GameObject:
   m_ObjectHideFlags: 0
@@ -9065,10 +9143,13 @@ MonoBehaviour:
   strenght: 0
   speed: 0
   weaknessMultiplier: 1
-  resistenceMultiplier: 1
-  capybaraXP: 0
+  resistence: 0
   capybaraLevel: 0
-  capybaraTotalXP: 0
+  capybaraXP: 0
+  canUseFirstAttack: 0
+  canUseSecondAttack: 0
+  canUseThirdAttack: 0
+  canUseFourthAttack: 0
 --- !u!1 &1831050483
 GameObject:
   m_ObjectHideFlags: 0
@@ -9469,10 +9550,13 @@ MonoBehaviour:
   strenght: 0
   speed: 0
   weaknessMultiplier: 1
-  resistenceMultiplier: 1
-  capybaraXP: 0
+  resistence: 0
   capybaraLevel: 0
-  capybaraTotalXP: 0
+  capybaraXP: 0
+  canUseFirstAttack: 0
+  canUseSecondAttack: 0
+  canUseThirdAttack: 0
+  canUseFourthAttack: 0
 --- !u!1 &1858669713
 GameObject:
   m_ObjectHideFlags: 0
@@ -10110,10 +10194,13 @@ MonoBehaviour:
   strenght: 0
   speed: 0
   weaknessMultiplier: 1
-  resistenceMultiplier: 1
-  capybaraXP: 0
+  resistence: 0
   capybaraLevel: 0
-  capybaraTotalXP: 0
+  capybaraXP: 0
+  canUseFirstAttack: 0
+  canUseSecondAttack: 0
+  canUseThirdAttack: 0
+  canUseFourthAttack: 0
 --- !u!1 &1888775917
 GameObject:
   m_ObjectHideFlags: 0
@@ -10264,10 +10351,13 @@ MonoBehaviour:
   strenght: 0
   speed: 0
   weaknessMultiplier: 1
-  resistenceMultiplier: 1
-  capybaraXP: 0
+  resistence: 0
   capybaraLevel: 0
-  capybaraTotalXP: 0
+  capybaraXP: 0
+  canUseFirstAttack: 0
+  canUseSecondAttack: 0
+  canUseThirdAttack: 0
+  canUseFourthAttack: 0
 --- !u!1 &1934481552
 GameObject:
   m_ObjectHideFlags: 0
@@ -10630,10 +10720,13 @@ MonoBehaviour:
   strenght: 0
   speed: 0
   weaknessMultiplier: 1
-  resistenceMultiplier: 1
-  capybaraXP: 0
+  resistence: 0
   capybaraLevel: 0
-  capybaraTotalXP: 0
+  capybaraXP: 0
+  canUseFirstAttack: 0
+  canUseSecondAttack: 0
+  canUseThirdAttack: 0
+  canUseFourthAttack: 0
 --- !u!1 &2001212949
 GameObject:
   m_ObjectHideFlags: 0
@@ -11019,7 +11112,7 @@ GameObject:
   - component: {fileID: 2063695728}
   - component: {fileID: 2063695729}
   m_Layer: 0
-  m_Name: WildCabybaraData
+  m_Name: WildCabybara_Data
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11058,8 +11151,14 @@ MonoBehaviour:
   dataHealth: 0
   dataStrenght: 0
   dataSpeed: 0
+  dataLevel: 0
+  dataXp: 0
   dataWeaknessMultiplier: 0
   dataResistenceMultiplier: 0
+  dataCanUseFirstAttack: 0
+  dataCanUseSecondAttack: 0
+  dataCanUseThirdAttack: 0
+  dataCanUseFourthAttack: 0
 --- !u!1 &2088107903
 GameObject:
   m_ObjectHideFlags: 0
@@ -11344,10 +11443,13 @@ MonoBehaviour:
   strenght: 0
   speed: 0
   weaknessMultiplier: 1
-  resistenceMultiplier: 1
-  capybaraXP: 0
+  resistence: 0
   capybaraLevel: 0
-  capybaraTotalXP: 0
+  capybaraXP: 0
+  canUseFirstAttack: 0
+  canUseSecondAttack: 0
+  canUseThirdAttack: 0
+  canUseFourthAttack: 0
 --- !u!1 &2127748188
 GameObject:
   m_ObjectHideFlags: 0
@@ -11562,3 +11664,4 @@ SceneRoots:
   - {fileID: 319798384}
   - {fileID: 680010825}
   - {fileID: 2063695728}
+  - {fileID: 498401700}

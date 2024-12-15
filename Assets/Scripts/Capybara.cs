@@ -107,7 +107,7 @@ public class Capybara : MonoBehaviour
         return SceneManager.GetActiveScene().name == sceneName;
     }
 
-    void SetWildStats()
+    public void SetWildStats()
     {
         this.capybaraName = WildData.instance.dataName;
         this.type = WildData.instance.dataType;
@@ -115,6 +115,10 @@ public class Capybara : MonoBehaviour
         this.state = WildData.instance.dataState;
         this.strenght = WildData.instance.dataStrenght;
         this.speed = WildData.instance.dataSpeed;
+
+        this.capybaraLevel = WildData.instance.dataLevel;
+        this.capybaraXP = WildData.instance.dataXp;
+
         this.weaknessMultiplier = WildData.instance.dataWeaknessMultiplier;
         this.resistence = WildData.instance.dataResistenceMultiplier;
 

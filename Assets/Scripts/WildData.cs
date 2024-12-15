@@ -14,6 +14,9 @@ public class WildData : MonoBehaviour
     public int dataHealth;
     public int dataStrenght;
     public int dataSpeed;
+    public int dataLevel;
+    public int dataXp;
+
     public int dataWeaknessMultiplier;
     public int dataResistenceMultiplier;
 
@@ -49,6 +52,10 @@ public class WildData : MonoBehaviour
             dataHealth = other.health;
             dataStrenght = other.strenght;
             dataSpeed = other.speed;
+
+            dataLevel = other.capybaraLevel;
+            dataXp = other.capybaraXP;
+
             dataWeaknessMultiplier = other.weaknessMultiplier;
             dataResistenceMultiplier = other.resistence;
 
@@ -113,7 +120,7 @@ public class WildData : MonoBehaviour
             {
                 instantiatedCapybara = Resources.Load<GameObject>("CapivaraFantasma");
                 if (instantiatedCapybara != null) Instantiate(instantiatedCapybara, new Vector3(5.52f, 1.78f, 0), Quaternion.identity); // posicao do inimigo na tela
-            }            
+            }
         }
 
         if (scene.name == "GameScene")
