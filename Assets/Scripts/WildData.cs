@@ -83,37 +83,37 @@ public class WildData : MonoBehaviour
             if (dataType == "Water")
             {
                 instantiatedCapybara = Resources.Load<GameObject>("CapivaraAgua");
-                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara);
+                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara, new Vector3(5.52f, 1.78f, 0), Quaternion.identity); // posicao do inimigo na tela
             }
 
             else if (dataType == "Fire")
             {
                 instantiatedCapybara = Resources.Load<GameObject>("CapivaraFogo");
-                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara);
+                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara, new Vector3(5.52f, 1.78f, 0), Quaternion.identity); // posicao do inimigo na tela
             }
 
             else if (dataType == "Grass")
             {
                 instantiatedCapybara = Resources.Load<GameObject>("CapivaraPlanta");
-                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara);
+                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara, new Vector3(5.52f, 1.78f, 0), Quaternion.identity); // posicao do inimigo na tela
             }
 
             else if (dataType == "Normal")
             {
                 instantiatedCapybara = Resources.Load<GameObject>("CapivaraNormal");
-                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara);
+                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara, new Vector3(5.52f, 1.78f, 0), Quaternion.identity); // posicao do inimigo na tela
             }
 
             else if (dataType == "Fairy")
             {
                 instantiatedCapybara = Resources.Load<GameObject>("CapivaraFada");
-                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara);
+                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara, new Vector3(5.52f, 1.78f, 0), Quaternion.identity); // posicao do inimigo na tela
             }
 
             else if (dataType == "Psychic")
             {
                 instantiatedCapybara = Resources.Load<GameObject>("CapivaraPsiquica");
-                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara);
+                if (instantiatedCapybara != null) Instantiate(instantiatedCapybara, new Vector3(5.52f, 1.78f, 0), Quaternion.identity); // posicao do inimigo na tela
             }
 
             else if (dataType == "Ghost")

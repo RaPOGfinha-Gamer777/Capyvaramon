@@ -77,43 +77,45 @@ public class GameController : MonoBehaviour
 
         foreach (var cap in allCapybaras)
         {
-            if (cap.gameObject.tag == "FireCapybara")
+            if (cap.state == "Wild")
             {
-                SetCapybaraStats(cap, fireMinHP, fireMaxHP, fireMinStrenght, fireMaxStrenght, fireMinSpeed, fireMaxSpeed);
-            }
+                if (cap.gameObject.tag == "FireCapybara")
+                {
+                    SetCapybaraStats(cap, fireMinHP, fireMaxHP, fireMinStrenght, fireMaxStrenght, fireMinSpeed, fireMaxSpeed);
+                }
 
-            else if (cap.gameObject.tag == "WaterCapybara")
-            {
-                SetCapybaraStats(cap, waterMinHP, waterMaxHP, waterMinStrenght, waterMaxStrenght, waterMinSpeed, waterMaxSpeed);
-            }
+                else if (cap.gameObject.tag == "WaterCapybara")
+                {
+                    SetCapybaraStats(cap, waterMinHP, waterMaxHP, waterMinStrenght, waterMaxStrenght, waterMinSpeed, waterMaxSpeed);
+                }
 
-            else if (cap.gameObject.tag == "GrassCapybara")
-            {
-                SetCapybaraStats(cap, grassMinHP, grassMaxHP, grassMinStrenght, grassMaxStrenght, grassMinSpeed, grassMaxSpeed);
-            }
+                else if (cap.gameObject.tag == "GrassCapybara")
+                {
+                    SetCapybaraStats(cap, grassMinHP, grassMaxHP, grassMinStrenght, grassMaxStrenght, grassMinSpeed, grassMaxSpeed);
+                }
 
-            else if (cap.gameObject.tag == "NormalCapybara")
-            {
-                SetCapybaraStats(cap, normalMinHP, normalMaxHP, normalMinStrenght, normalMaxStrenght, normalMinSpeed, normalMaxSpeed);
-            }
+                else if (cap.gameObject.tag == "NormalCapybara")
+                {
+                    SetCapybaraStats(cap, normalMinHP, normalMaxHP, normalMinStrenght, normalMaxStrenght, normalMinSpeed, normalMaxSpeed);
+                }
 
-            else if (cap.gameObject.tag == "FairyCapybara")
-            {
-                SetCapybaraStats(cap, fairyMinHP, fairyMaxHP, fairyMinStrenght, fairyMaxStrenght, fairyMinSpeed, fairyMaxSpeed);
-            }
+                else if (cap.gameObject.tag == "FairyCapybara")
+                {
+                    SetCapybaraStats(cap, fairyMinHP, fairyMaxHP, fairyMinStrenght, fairyMaxStrenght, fairyMinSpeed, fairyMaxSpeed);
+                }
 
-            else if (cap.gameObject.tag == "PsychicCapybara")
-            {
-                SetCapybaraStats(cap, psyMinHP, psyMaxHP, psyMinStrenght, psyMaxStrenght, psyMinSpeed, psyMaxSpeed);
-            }
+                else if (cap.gameObject.tag == "PsychicCapybara")
+                {
+                    SetCapybaraStats(cap, psyMinHP, psyMaxHP, psyMinStrenght, psyMaxStrenght, psyMinSpeed, psyMaxSpeed);
+                }
 
-            else if (cap.gameObject.tag == "GhostCapybara")
-            {
-                SetCapybaraStats(cap, ghostMinHP, ghostMaxHP, ghostMinStrenght, ghostMaxStrenght, ghostMinSpeed, ghostMaxSpeed);
-            }
-            
-            cap.state = "Wild";
-            CalculateSpawnXP(cap);
+                else if (cap.gameObject.tag == "GhostCapybara")
+                {
+                    SetCapybaraStats(cap, ghostMinHP, ghostMaxHP, ghostMinStrenght, ghostMaxStrenght, ghostMinSpeed, ghostMaxSpeed);
+                }
+
+                CalculateSpawnXP(cap);
+            }   
         }
     }
 

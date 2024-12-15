@@ -2239,6 +2239,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2744cfdb7d6b3614ba66838642a3b5b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionInGameScene: {x: 0, y: 0, z: 0}
+  allCapybaras: []
+  teamCapybaras: []
 --- !u!4 &498401700
 Transform:
   m_ObjectHideFlags: 0
@@ -2399,7 +2402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
-  state: 
+  state: Wild
   health: 0
   strenght: 0
   speed: 0
@@ -2795,7 +2798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
-  state: 
+  state: Wild
   health: 0
   strenght: 0
   speed: 0
@@ -4097,7 +4100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
-  state: 
+  state: Wild
   health: 0
   strenght: 0
   speed: 0
@@ -4508,7 +4511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
-  state: 
+  state: Wild
   health: 0
   strenght: 0
   speed: 0
@@ -4665,7 +4668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
-  state: 
+  state: Wild
   health: 0
   strenght: 0
   speed: 0
@@ -4956,7 +4959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
-  state: 
+  state: Wild
   health: 0
   strenght: 0
   speed: 0
@@ -5805,7 +5808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
-  state: 
+  state: Wild
   health: 0
   strenght: 0
   speed: 0
@@ -6473,7 +6476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
-  state: 
+  state: Wild
   health: 0
   strenght: 0
   speed: 0
@@ -6630,7 +6633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
-  state: 
+  state: Wild
   health: 0
   strenght: 0
   speed: 0
@@ -7804,7 +7807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
-  state: 
+  state: Wild
   health: 0
   strenght: 0
   speed: 0
@@ -8439,7 +8442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
-  state: 
+  state: Wild
   health: 0
   strenght: 0
   speed: 0
@@ -9138,7 +9141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
-  state: 
+  state: Wild
   health: 0
   strenght: 0
   speed: 0
@@ -9545,7 +9548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
-  state: 
+  state: Wild
   health: 0
   strenght: 0
   speed: 0
@@ -10189,7 +10192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
-  state: 
+  state: Wild
   health: 0
   strenght: 0
   speed: 0
@@ -10346,7 +10349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
-  state: 
+  state: Wild
   health: 0
   strenght: 0
   speed: 0
@@ -10715,7 +10718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
-  state: 
+  state: Wild
   health: 0
   strenght: 0
   speed: 0
@@ -11438,7 +11441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capybaraName: 
   type: 
-  state: 
+  state: Wild
   health: 0
   strenght: 0
   speed: 0

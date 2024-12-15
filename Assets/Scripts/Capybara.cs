@@ -127,4 +127,9 @@ public class Capybara : MonoBehaviour
         this.canUseThirdAttack = WildData.instance.dataCanUseThirdAttack;
         this.canUseFourthAttack = WildData.instance.dataCanUseFourthAttack;
     }
+
+    public void SetPlayersStats()
+    {
+        this.capybaraName = "Jorge";
+    }
 }

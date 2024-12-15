@@ -44,8 +44,11 @@ public class Capture : MonoBehaviour
                     emptyCapybara.AddComponent<Ghost>();
                     break;
             }
+
             emptyCapybara.name = wildData.dataName;
-            
+            Capybara capybara = emptyCapybara.GetComponent<Capybara>();
+            capybara.state = "Players";
+
             playerData.allCapybaras.Add(emptyCapybara);
             if (playerData.teamCapybaras.Count < 3) playerData.teamCapybaras.Add(emptyCapybara); // 3 e o limite decapivaras no time
         }
