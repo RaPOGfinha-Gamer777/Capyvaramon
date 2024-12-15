@@ -45,6 +45,9 @@ public class Capture : MonoBehaviour
                     break;
             }
             emptyCapybara.name = wildData.dataName;
+            
+            playerData.allCapybaras.Add(emptyCapybara);
+            if (playerData.teamCapybaras.Count < 3) playerData.teamCapybaras.Add(emptyCapybara); // 3 e o limite decapivaras no time
         }
     }
 }

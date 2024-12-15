@@ -17,16 +17,6 @@ public class Movement : MonoBehaviour
     private bool isMoving = false;
     private Vector3 targetPosition;
 
-    private void Start()
-    {
-        PlayerData playerData = FindAnyObjectByType<PlayerData>();
-
-        if (playerData.positionInGameScene != Vector3.zero)
-        {
-            transform.position = playerData.positionInGameScene;
-        }
-    }
-
     private void Update()
     {
         if (!inventoy.activeSelf)
