@@ -19,7 +19,12 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
-        targetPosition = transform.position;
+        PlayerData playerData = FindAnyObjectByType<PlayerData>();
+
+        if (playerData.positionInGameScene != Vector3.zero)
+        {
+            transform.position = playerData.positionInGameScene;
+        }
     }
 
     private void Update()
@@ -84,6 +89,9 @@ public class Movement : MonoBehaviour
 
     void LoadBattleScene()
     {
+        PlayerData playerData = FindAnyObjectByType<PlayerData>();
+        playerData.positionInGameScene = transform.position;
+
         SceneManager.LoadScene("BattleScene");
     }
 }

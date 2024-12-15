@@ -6,6 +6,8 @@ public class PlayerData : MonoBehaviour
 {
     public static PlayerData instance;
 
+    public Vector3 positionInGameScene;
+
     private void Awake()
     {
         if (instance == null)
