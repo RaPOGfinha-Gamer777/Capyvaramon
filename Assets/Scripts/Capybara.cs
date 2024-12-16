@@ -61,9 +61,9 @@ public class Capybara : MonoBehaviour
         if (isFainted || isParalyzed || !canUseThirdAttack) return;
     }
 
-    public virtual void TakeDamage(int  damage)
+    public virtual void TakeDamage(int  damage, int multiplier, int resist)
     {
-        health -= (damage * weaknessMultiplier) - resistence;
+        health -= (damage * multiplier) - resist;
         isFainted = health <= 0;
     }
 

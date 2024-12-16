@@ -13,7 +13,22 @@ public class Fire : Capybara
     public override void UseFirstAttack()
     {
         base.UseFirstAttack();
-        Debug.Log("primeiro ataque");
+        
+        Battle battle = FindAnyObjectByType<Battle>();
+        Capybara other = battle.activeEnemy.GetComponent<Capybara>();
+
+        if (other.type == "Grass")
+        {
+            this.weaknessMultiplier = 2;
+            Debug.Log("acertou na fraqueza");
+        }
+        else if (other.type == "Psychic")
+        {
+            this.resistence = 20; // resistencia base em todas as capivaras
+            Debug.Log("acertou na resistencia");
+        }
+
+        other.TakeDamage(this.strenght, this.weaknessMultiplier, this.resistence);
     }
 
     public override void UseSecondAttack()

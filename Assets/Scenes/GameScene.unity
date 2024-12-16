@@ -2413,7 +2413,6 @@ MonoBehaviour:
   canUseFirstAttack: 0
   canUseSecondAttack: 0
   canUseThirdAttack: 0
-  canUseFourthAttack: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2809,7 +2808,6 @@ MonoBehaviour:
   canUseFirstAttack: 0
   canUseSecondAttack: 0
   canUseThirdAttack: 0
-  canUseFourthAttack: 0
 --- !u!1 &537554872
 GameObject:
   m_ObjectHideFlags: 0
@@ -4111,7 +4109,6 @@ MonoBehaviour:
   canUseFirstAttack: 0
   canUseSecondAttack: 0
   canUseThirdAttack: 0
-  canUseFourthAttack: 0
 --- !u!1 &780509049
 GameObject:
   m_ObjectHideFlags: 0
@@ -4522,7 +4519,6 @@ MonoBehaviour:
   canUseFirstAttack: 0
   canUseSecondAttack: 0
   canUseThirdAttack: 0
-  canUseFourthAttack: 0
 --- !u!1 &844582749
 GameObject:
   m_ObjectHideFlags: 0
@@ -4679,7 +4675,6 @@ MonoBehaviour:
   canUseFirstAttack: 0
   canUseSecondAttack: 0
   canUseThirdAttack: 0
-  canUseFourthAttack: 0
 --- !u!1 &860647407
 GameObject:
   m_ObjectHideFlags: 0
@@ -4970,7 +4965,6 @@ MonoBehaviour:
   canUseFirstAttack: 0
   canUseSecondAttack: 0
   canUseThirdAttack: 0
-  canUseFourthAttack: 0
 --- !u!1 &882891720
 GameObject:
   m_ObjectHideFlags: 0
@@ -5819,7 +5813,6 @@ MonoBehaviour:
   canUseFirstAttack: 0
   canUseSecondAttack: 0
   canUseThirdAttack: 0
-  canUseFourthAttack: 0
 --- !u!1 &1190994111
 GameObject:
   m_ObjectHideFlags: 0
@@ -6487,7 +6480,6 @@ MonoBehaviour:
   canUseFirstAttack: 0
   canUseSecondAttack: 0
   canUseThirdAttack: 0
-  canUseFourthAttack: 0
 --- !u!1 &1312357530
 GameObject:
   m_ObjectHideFlags: 0
@@ -6644,7 +6636,6 @@ MonoBehaviour:
   canUseFirstAttack: 0
   canUseSecondAttack: 0
   canUseThirdAttack: 0
-  canUseFourthAttack: 0
 --- !u!1 &1317021110
 GameObject:
   m_ObjectHideFlags: 0
@@ -7818,7 +7809,6 @@ MonoBehaviour:
   canUseFirstAttack: 0
   canUseSecondAttack: 0
   canUseThirdAttack: 0
-  canUseFourthAttack: 0
 --- !u!1 &1517660681
 GameObject:
   m_ObjectHideFlags: 0
@@ -8453,7 +8443,6 @@ MonoBehaviour:
   canUseFirstAttack: 0
   canUseSecondAttack: 0
   canUseThirdAttack: 0
-  canUseFourthAttack: 0
 --- !u!1 &1753645748
 GameObject:
   m_ObjectHideFlags: 0
@@ -9152,7 +9141,6 @@ MonoBehaviour:
   canUseFirstAttack: 0
   canUseSecondAttack: 0
   canUseThirdAttack: 0
-  canUseFourthAttack: 0
 --- !u!1 &1831050483
 GameObject:
   m_ObjectHideFlags: 0
@@ -9559,7 +9547,6 @@ MonoBehaviour:
   canUseFirstAttack: 0
   canUseSecondAttack: 0
   canUseThirdAttack: 0
-  canUseFourthAttack: 0
 --- !u!1 &1858669713
 GameObject:
   m_ObjectHideFlags: 0
@@ -10203,7 +10190,6 @@ MonoBehaviour:
   canUseFirstAttack: 0
   canUseSecondAttack: 0
   canUseThirdAttack: 0
-  canUseFourthAttack: 0
 --- !u!1 &1888775917
 GameObject:
   m_ObjectHideFlags: 0
@@ -10360,7 +10346,6 @@ MonoBehaviour:
   canUseFirstAttack: 0
   canUseSecondAttack: 0
   canUseThirdAttack: 0
-  canUseFourthAttack: 0
 --- !u!1 &1934481552
 GameObject:
   m_ObjectHideFlags: 0
@@ -10729,7 +10714,6 @@ MonoBehaviour:
   canUseFirstAttack: 0
   canUseSecondAttack: 0
   canUseThirdAttack: 0
-  canUseFourthAttack: 0
 --- !u!1 &2001212949
 GameObject:
   m_ObjectHideFlags: 0
@@ -11452,7 +11436,6 @@ MonoBehaviour:
   canUseFirstAttack: 0
   canUseSecondAttack: 0
   canUseThirdAttack: 0
-  canUseFourthAttack: 0
 --- !u!1 &2127748188
 GameObject:
   m_ObjectHideFlags: 0
