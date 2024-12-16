@@ -5,8 +5,10 @@ using UnityEngine;
 public class Battle : MonoBehaviour
 {
     public GameObject[] teamSprites; // sprites das capivaras na cena de batalha
-    [SerializeField] private GameObject activeSprite; // sprite ativa
-    [SerializeField] private GameObject activeCapybara;
+    private GameObject activeSprite; // sprite ativa
+
+    public GameObject activeCapybara;
+    public GameObject activeEnemy;
 
     private void Start()
     {
@@ -21,7 +23,8 @@ public class Battle : MonoBehaviour
 
             PlayerData playerData = FindAnyObjectByType<PlayerData>();
             activeCapybara = playerData.teamCapybaras[0];
-        }      
+        }
+        activeEnemy = GameObject.FindGameObjectWithTag("Enemy");
     }
 
     private void Update()
@@ -37,6 +40,22 @@ public class Battle : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.U))
         {
             SwitchWitchThird();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            Capybara cap = activeCapybara.GetComponent<Capybara>();
+            cap.UseFirstAttack();
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Capybara cap = activeCapybara.GetComponent<Capybara>();
+            cap.UseSecondAttack();
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Capybara cap = activeCapybara.GetComponent<Capybara>();
+            cap.UseThirdAttack();
         }
     }
 

@@ -28,12 +28,10 @@ public class Capybara : MonoBehaviour
     protected string firstAttackName;
     protected string secondAttackName;
     protected string thirdAttackName;
-    protected string fourthAttackName;
 
     public bool canUseFirstAttack;
     public bool canUseSecondAttack;
     public bool canUseThirdAttack;
-    public bool canUseFourthAttack;
 
     private void OnEnable()
     {
@@ -48,27 +46,22 @@ public class Capybara : MonoBehaviour
 
     // /////////////////////////////////////////////////////////////////////////
 
-    protected virtual void UseFirstAttack()
+    public virtual void UseFirstAttack()
     {
         if (isFainted || isParalyzed || !canUseFirstAttack) return;
     }
 
-    protected virtual void UseSecondAttack()
+    public virtual void UseSecondAttack()
     {
         if (isFainted || isParalyzed || !canUseSecondAttack) return;
     }
 
-    protected virtual void UseThirdAttack()
+    public virtual void UseThirdAttack()
     {
         if (isFainted || isParalyzed || !canUseThirdAttack) return;
     }
 
-    protected virtual void UseFourthAttack()
-    {
-        if (isFainted || isParalyzed || !canUseFirstAttack) return;
-    }
-
-    protected virtual void TakeDamage(int  damage)
+    public virtual void TakeDamage(int  damage)
     {
         health -= (damage * weaknessMultiplier) - resistence;
         isFainted = health <= 0;
@@ -97,7 +90,6 @@ public class Capybara : MonoBehaviour
         if (this.capybaraLevel >= 1) this.canUseFirstAttack = true;
         if (this.capybaraLevel >= 5) this.canUseSecondAttack = true;
         if (this.capybaraLevel >= 15) this.canUseThirdAttack = true;
-        if (this.capybaraLevel >= 35) this.canUseFourthAttack = true;
     }
 
     // /////////////////////////////////////////////////////////////////////////////////
@@ -125,11 +117,5 @@ public class Capybara : MonoBehaviour
         this.canUseFirstAttack = WildData.instance.dataCanUseFirstAttack;
         this.canUseSecondAttack = WildData.instance.dataCanUseSecondAttack;
         this.canUseThirdAttack = WildData.instance.dataCanUseThirdAttack;
-        this.canUseFourthAttack = WildData.instance.dataCanUseFourthAttack;
-    }
-
-    public void SetPlayersStats()
-    {
-        this.capybaraName = "Jorge";
     }
 }

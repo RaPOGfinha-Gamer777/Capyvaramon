@@ -12,6 +12,7 @@ TagManager:
   - PsychicCapybara
   - GhostCapybara
   - Visual
+  - Enemy
   layers:
   - Default
   - TransparentFX

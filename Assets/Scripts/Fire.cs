@@ -9,4 +9,22 @@ public class Fire : Capybara
         this.capybaraName = "Fire Capybara";
         this.type = "Fire";
     }
+
+    public override void UseFirstAttack()
+    {
+        base.UseFirstAttack();
+        Debug.Log("primeiro ataque");
+    }
+
+    public override void UseSecondAttack()
+    {
+        base.UseSecondAttack();
+        Debug.Log("segundo ataque");
+    }
+
+    public override void UseThirdAttack()
+    {
+        base.UseThirdAttack();
+        Debug.Log("terceiro ataque");
+    }
 }

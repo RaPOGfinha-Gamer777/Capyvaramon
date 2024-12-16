@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7225973544187652502}
   m_Layer: 0
   m_Name: CapivaraFantasma
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +111,6 @@ MonoBehaviour:
   canUseFirstAttack: 0
   canUseSecondAttack: 0
   canUseThirdAttack: 0
-  canUseFourthAttack: 0
 --- !u!114 &7225973544187652502
 MonoBehaviour:
   m_ObjectHideFlags: 0

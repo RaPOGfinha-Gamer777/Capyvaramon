@@ -62,7 +62,6 @@ public class WildData : MonoBehaviour
             dataCanUseFirstAttack = other.canUseFirstAttack;
             dataCanUseSecondAttack = other.canUseSecondAttack;
             dataCanUseThirdAttack = other.canUseThirdAttack;
-            dataCanUseFourthAttack = other.canUseFourthAttack;
         }
     }
 
