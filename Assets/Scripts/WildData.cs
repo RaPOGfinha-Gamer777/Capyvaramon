@@ -57,7 +57,7 @@ public class WildData : MonoBehaviour
             dataXp = other.capybaraXP;
 
             dataWeaknessMultiplier = other.weaknessMultiplier;
-            dataResistenceMultiplier = other.resistence;
+            dataResistenceMultiplier = other.resistance;
 
             dataCanUseFirstAttack = other.canUseFirstAttack;
             dataCanUseSecondAttack = other.canUseSecondAttack;

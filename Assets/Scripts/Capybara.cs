@@ -16,22 +16,29 @@ public class Capybara : MonoBehaviour
     public int strenght; // força no ataque
     public int speed; // pra ver quem inicia na batalha
     public int weaknessMultiplier = 1; // critico de fraqueza MULTIPLICA
-    public int resistence = 0; // resistencia SUBTRAI
+    public int resistance = 0; // resistencia SUBTRAI
 
     public int capybaraLevel = 1;
     public int capybaraXP;
 
-    protected bool isFainted;
-    protected bool isBurned;
-    protected bool isParalyzed;
+    [HideInInspector] public bool isFainted;
+    [HideInInspector] public bool isBurned;
+    [HideInInspector] public bool isParalyzed;
 
-    protected string firstAttackName;
-    protected string secondAttackName;
-    protected string thirdAttackName;
+    [HideInInspector] public string firstAttackName;
+    [HideInInspector] public string secondAttackName = "Tackle"; // ataque default de todas capivaras
+    [HideInInspector] public string thirdAttackName;
+    [HideInInspector] public string fourthAttackName;
+
+    [HideInInspector] public string firstAttackType;
+    [HideInInspector] public string secondAttackType = "Normal"; // todas tem o segundo ataque do tipo normal
+    [HideInInspector] public string thirdAttackType;
+    [HideInInspector] public string fourthAttackType;
 
     public bool canUseFirstAttack;
     public bool canUseSecondAttack;
     public bool canUseThirdAttack;
+    public bool canUseFourthAttack;
 
     private void OnEnable()
     {
@@ -49,22 +56,38 @@ public class Capybara : MonoBehaviour
     public virtual void UseFirstAttack()
     {
         if (isFainted || isParalyzed || !canUseFirstAttack) return;
+        Debug.Log(firstAttackName);
     }
 
     public virtual void UseSecondAttack()
     {
         if (isFainted || isParalyzed || !canUseSecondAttack) return;
+        Debug.Log(secondAttackName);
     }
 
     public virtual void UseThirdAttack()
     {
         if (isFainted || isParalyzed || !canUseThirdAttack) return;
+        Debug.Log(thirdAttackName);
+    }
+
+    public virtual void UseFourthAttack()
+    {
+        if (isFainted || isParalyzed || !canUseFourthAttack) return;
+        Debug.Log(fourthAttackName);
     }
 
     public virtual void TakeDamage(int  damage, int multiplier, int resist)
     {
         health -= (damage * multiplier) - resist;
         isFainted = health <= 0;
+    }
+
+    protected int CalculateDamage(int strenght, float multiplier) // 0.75x para segundo ataque e 1.5x para terceiro ataque
+    {
+        float floatDamage = strenght * multiplier;
+        int damage = Mathf.RoundToInt(floatDamage);
+        return damage;
     }
 
     // ////////////////////////////////////////////////////////////////////////////////
@@ -112,10 +135,11 @@ public class Capybara : MonoBehaviour
         this.capybaraXP = WildData.instance.dataXp;
 
         this.weaknessMultiplier = WildData.instance.dataWeaknessMultiplier;
-        this.resistence = WildData.instance.dataResistenceMultiplier;
+        this.resistance = WildData.instance.dataResistenceMultiplier;
 
         this.canUseFirstAttack = WildData.instance.dataCanUseFirstAttack;
         this.canUseSecondAttack = WildData.instance.dataCanUseSecondAttack;
         this.canUseThirdAttack = WildData.instance.dataCanUseThirdAttack;
+        this.canUseFourthAttack = WildData.instance.dataCanUseFourthAttack;
     }
 }

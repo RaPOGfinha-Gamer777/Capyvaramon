@@ -42,20 +42,25 @@ public class Battle : MonoBehaviour
             SwitchWitchThird();
         }
         
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.H))
         {
             Capybara cap = activeCapybara.GetComponent<Capybara>();
             cap.UseFirstAttack();
         }
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.J))
         {
             Capybara cap = activeCapybara.GetComponent<Capybara>();
             cap.UseSecondAttack();
         }
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             Capybara cap = activeCapybara.GetComponent<Capybara>();
             cap.UseThirdAttack();
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Capybara cap = activeCapybara.GetComponent<Capybara>();
+            cap.UseFourthAttack();
         }
     }
 

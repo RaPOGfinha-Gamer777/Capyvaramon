@@ -180,5 +180,6 @@ public class GameController : MonoBehaviour
         if (cap.capybaraLevel >= 1) cap.canUseFirstAttack = true;
         if (cap.capybaraLevel >= 5) cap.canUseSecondAttack = true;
         if (cap.capybaraLevel >= 15) cap.canUseThirdAttack = true;
+        if (cap.capybaraLevel >= 30) cap.canUseFourthAttack = true;
     }
 }

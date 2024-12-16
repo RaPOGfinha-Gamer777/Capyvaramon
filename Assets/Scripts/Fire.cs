@@ -8,6 +8,10 @@ public class Fire : Capybara
     {
         this.capybaraName = "Fire Capybara";
         this.type = "Fire";
+
+        this.firstAttackName = "Fire Blast";
+        this.thirdAttackName = "Lava Burst";
+        this.fourthAttackName = "Magma Pulse";
     }
 
     public override void UseFirstAttack()
@@ -20,26 +24,32 @@ public class Fire : Capybara
         if (other.type == "Grass")
         {
             this.weaknessMultiplier = 2;
-            Debug.Log("acertou na fraqueza");
+            Debug.Log("VERY EFFECTIVE!!!");
         }
         else if (other.type == "Psychic")
         {
-            this.resistence = 20; // resistencia base em todas as capivaras
-            Debug.Log("acertou na resistencia");
+            this.resistance = 20; // resistencia base em todas as capivaras
+            Debug.Log("NOT VERY EFFECTIVE!!!");
         }
 
-        other.TakeDamage(this.strenght, this.weaknessMultiplier, this.resistence);
+        other.TakeDamage(this.strenght, this.weaknessMultiplier, this.resistance);
     }
 
     public override void UseSecondAttack()
     {
         base.UseSecondAttack();
-        Debug.Log("segundo ataque");
+
     }
 
     public override void UseThirdAttack()
     {
         base.UseThirdAttack();
-        Debug.Log("terceiro ataque");
+
+    }
+
+    public override void UseFourthAttack()
+    {
+        base.UseFourthAttack();
+
     }
 }
