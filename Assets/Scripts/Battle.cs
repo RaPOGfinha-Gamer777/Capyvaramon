@@ -149,40 +149,42 @@ public class Battle : MonoBehaviour
         Capybara cap = activeCapybara.GetComponent<Capybara>();
         BattleUI battleUI = FindAnyObjectByType<BattleUI>();
 
+        battleUI.powerPointsUI = cap.powerPoints.ToString();
+
         if (cap.canUseFirstAttack)
         {
-            battleUI.AlternateFirstButton(true, cap.firstAttackName);           
+            battleUI.AlternateFirstButton(true, cap.firstAttackName, cap.firstAttackCost.ToString());           
         }
         else
         {
-            battleUI.AlternateFirstButton(false, cap.firstAttackName);
+            battleUI.AlternateFirstButton(false, cap.firstAttackName, cap.firstAttackCost.ToString());
         }
 
         if (cap.canUseSecondAttack)
         {
-            battleUI.AlternateSecondButton(true, cap.secondAttackName);
+            battleUI.AlternateSecondButton(true, cap.secondAttackName, cap.secondAttackCost.ToString());
         }
         else
         {
-            battleUI.AlternateSecondButton(false, cap.secondAttackName);
+            battleUI.AlternateSecondButton(false, cap.secondAttackName, cap.secondAttackCost.ToString());
         }
 
         if (cap.canUseThirdAttack)
         {
-            battleUI.AlternateThirdButton(true, cap.thirdAttackName);
+            battleUI.AlternateThirdButton(true, cap.thirdAttackName, cap.thirdAttackCost.ToString());
         }
         else
         {
-            battleUI.AlternateThirdButton(false, cap.thirdAttackName);
+            battleUI.AlternateThirdButton(false, cap.thirdAttackName, cap.thirdAttackCost.ToString());
         }
 
         if (cap.canUseFourthAttack)
         {
-            battleUI.AlternateFourthButton(true, cap.fourthAttackName);
+            battleUI.AlternateFourthButton(true, cap.fourthAttackName, cap.fourthAttackCost.ToString());
         }
         else
         {
-            battleUI.AlternateFourthButton(false, cap.fourthAttackName);
+            battleUI.AlternateFourthButton(false, cap.fourthAttackName, cap.fourthAttackCost.ToString());
         }
     }
 }
