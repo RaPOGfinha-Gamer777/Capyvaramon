@@ -114,6 +114,13 @@ public class GameController : MonoBehaviour
                     SetCapybaraStats(cap, ghostMinHP, ghostMaxHP, ghostMinStrenght, ghostMaxStrenght, ghostMinSpeed, ghostMaxSpeed);
                 }
 
+                cap.maxPowerPoints = 15;
+                cap.powerPoints = 15;
+
+                cap.firstAttackCost = 3; // todos os ataques (menos o especial) tem o mesmo custo 
+                cap.secondAttackCost = 2;
+                cap.thirdAttackCost = 5;
+
                 CalculateSpawnXP(cap);
             }   
         }

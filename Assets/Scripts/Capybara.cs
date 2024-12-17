@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using static Unity.Burst.Intrinsics.X86.Avx;
+using JetBrains.Annotations;
 
 public class Capybara : MonoBehaviour
 {
@@ -40,6 +41,14 @@ public class Capybara : MonoBehaviour
     public bool canUseThirdAttack;
     public bool canUseFourthAttack;
 
+    public int firstAttackCost;
+    public int secondAttackCost;
+    public int thirdAttackCost;
+    public int fourthAttackCost;
+
+    public int powerPoints; // custo para cada ataque
+    public int maxPowerPoints;
+
     private void OnEnable()
     {
         if (IsCurrentScene("BattleScene"))
@@ -55,25 +64,25 @@ public class Capybara : MonoBehaviour
 
     public virtual void UseFirstAttack()
     {
-        if (isFainted || isParalyzed || !canUseFirstAttack) return;
+        if (isFainted || isParalyzed || !canUseFirstAttack || firstAttackCost > powerPoints) return;
         Debug.Log(firstAttackName);
     }
 
     public virtual void UseSecondAttack()
     {
-        if (isFainted || isParalyzed || !canUseSecondAttack) return;
+        if (isFainted || isParalyzed || !canUseSecondAttack || secondAttackCost > powerPoints) return;
         Debug.Log(secondAttackName);
     }
 
     public virtual void UseThirdAttack()
     {
-        if (isFainted || isParalyzed || !canUseThirdAttack) return;
+        if (isFainted || isParalyzed || !canUseThirdAttack || thirdAttackCost > powerPoints) return;
         Debug.Log(thirdAttackName);
     }
 
     public virtual void UseFourthAttack()
     {
-        if (isFainted || isParalyzed || !canUseFourthAttack) return;
+        if (isFainted || isParalyzed || !canUseFourthAttack || fourthAttackCost > powerPoints) return;
         Debug.Log(fourthAttackName);
     }
 
@@ -141,5 +150,13 @@ public class Capybara : MonoBehaviour
         this.canUseSecondAttack = WildData.instance.dataCanUseSecondAttack;
         this.canUseThirdAttack = WildData.instance.dataCanUseThirdAttack;
         this.canUseFourthAttack = WildData.instance.dataCanUseFourthAttack;
+
+        this.firstAttackCost = WildData.instance.dataFirstAttackCost;
+        this.secondAttackCost = WildData.instance.dataSecondAttackCost;
+        this.thirdAttackCost = WildData.instance.dataThirdAttackCost;
+        this.fourthAttackCost = WildData.instance.dataFourthAttackCost;
+
+        this.powerPoints = WildData.instance.dataPowerPoints;
+        this.maxPowerPoints = WildData.instance.dataMaxPowerPoints;
     }
 }

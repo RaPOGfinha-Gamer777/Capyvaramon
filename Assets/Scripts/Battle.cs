@@ -41,28 +41,57 @@ public class Battle : MonoBehaviour
         {
             SwitchWitchThird();
         }
-        
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            Capybara cap = activeCapybara.GetComponent<Capybara>();
-            cap.UseFirstAttack();
-        }
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            Capybara cap = activeCapybara.GetComponent<Capybara>();
-            cap.UseSecondAttack();
-        }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Capybara cap = activeCapybara.GetComponent<Capybara>();
-            cap.UseThirdAttack();
-        }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            Capybara cap = activeCapybara.GetComponent<Capybara>();
-            cap.UseFourthAttack();
-        }
     }
+
+    public void AttackWithFirst()
+    {
+        Capybara cap = activeCapybara.GetComponent<Capybara>();
+
+        if (cap.firstAttackCost <= cap.powerPoints)
+        {
+            cap.UseFirstAttack();
+            // funcao para passar o turno
+        }
+        else Debug.Log("pontos insuficientes!");
+    }
+
+    public void AttackWithSecond()
+    {
+        Capybara cap = activeCapybara.GetComponent<Capybara>();
+
+        if (cap.secondAttackCost <= cap.powerPoints)
+        {
+            cap.UseSecondAttack();
+            // funcao para passar o turno
+        }
+        else Debug.Log("pontos insuficientes!");
+    }
+
+    public void AttackWithThird()
+    {
+        Capybara cap = activeCapybara.GetComponent<Capybara>();
+
+        if (cap.thirdAttackCost <= cap.powerPoints)
+        {
+            cap.UseThirdAttack();
+            // funcao para passar o turno
+        }
+        else Debug.Log("pontos insuficientes!");
+    }
+
+    public void AttackWithFourth()
+    {
+        Capybara cap = activeCapybara.GetComponent<Capybara>();
+
+        if (cap.fourthAttackCost <= cap.powerPoints)
+        {
+            cap.UseFourthAttack();
+            // funcao para passar o turno
+        }
+        else Debug.Log("pontos insuficientes!");
+    }
+
+    // // // // // // // // // // // // // // // // // // // // // 
 
     public void SwitchWitchFirst()
     {

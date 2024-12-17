@@ -25,6 +25,14 @@ public class WildData : MonoBehaviour
     public bool dataCanUseThirdAttack;
     public bool dataCanUseFourthAttack;
 
+    public int dataFirstAttackCost;
+    public int dataSecondAttackCost;
+    public int dataThirdAttackCost;
+    public int dataFourthAttackCost;
+
+    public int dataMaxPowerPoints;
+    public int dataPowerPoints;
+
     private GameObject instantiatedCapybara;
 
     private void Awake()
@@ -62,6 +70,15 @@ public class WildData : MonoBehaviour
             dataCanUseFirstAttack = other.canUseFirstAttack;
             dataCanUseSecondAttack = other.canUseSecondAttack;
             dataCanUseThirdAttack = other.canUseThirdAttack;
+            dataCanUseFourthAttack = other.canUseFourthAttack;
+
+            dataFirstAttackCost = other.firstAttackCost;
+            dataSecondAttackCost = other.secondAttackCost;
+            dataThirdAttackCost = other.thirdAttackCost;
+            dataFourthAttackCost = other.fourthAttackCost;
+
+            dataPowerPoints = other.powerPoints;
+            dataMaxPowerPoints = other.maxPowerPoints;
         }
     }
 
@@ -137,6 +154,14 @@ public class WildData : MonoBehaviour
             dataCanUseSecondAttack = false;
             dataCanUseThirdAttack = false;
             dataCanUseFourthAttack = false;
+
+            dataFirstAttackCost = 0;
+            dataSecondAttackCost = 0;
+            dataThirdAttackCost = 0;
+            dataFourthAttackCost = 0;
+
+            dataMaxPowerPoints = 0;
+            dataPowerPoints = 0;
         }
     }
 }
