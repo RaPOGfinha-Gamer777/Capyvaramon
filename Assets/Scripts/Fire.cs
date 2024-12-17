@@ -29,7 +29,7 @@ public class Fire : Capybara
         }
         else if (other.type == "Psychic")
         {
-            this.resistance = 20; // resistencia base em todas as capivaras
+            this.resistance = 30; // resistencia base em todas as capivaras
             Debug.Log("NOT VERY EFFECTIVE!!!");
         }
 
@@ -78,6 +78,6 @@ public class Fire : Capybara
     public override void UseFourthAttack()
     {
         base.UseFourthAttack();
-        Debug.Log("especial");
+        Debug.Log("SPECIAL MOVE!!!");
     }
 }

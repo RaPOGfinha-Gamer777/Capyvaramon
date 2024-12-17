@@ -25,6 +25,7 @@ public class Battle : MonoBehaviour
             activeCapybara = playerData.teamCapybaras[0];
         }
         activeEnemy = GameObject.FindGameObjectWithTag("Enemy");
+        CheckActiveAttacks();
     }
 
     private void Update()
@@ -103,6 +104,8 @@ public class Battle : MonoBehaviour
 
             PlayerData playerData = FindAnyObjectByType<PlayerData>();
             activeCapybara = playerData.teamCapybaras[0];
+
+            CheckActiveAttacks();
         }
         else Debug.Log("Essa já é sua capivara ativa");
     }
@@ -117,6 +120,8 @@ public class Battle : MonoBehaviour
 
             PlayerData playerData = FindAnyObjectByType<PlayerData>();
             activeCapybara = playerData.teamCapybaras[1];
+
+            CheckActiveAttacks();
         }
         else Debug.Log("Essa já é sua capivara ativa");
     }
@@ -131,7 +136,53 @@ public class Battle : MonoBehaviour
 
             PlayerData playerData = FindAnyObjectByType<PlayerData>();
             activeCapybara = playerData.teamCapybaras[2];
+
+            CheckActiveAttacks();
         }
         else Debug.Log("Essa já é sua capivara ativa");
+    }
+
+    // // // // // // // // // // // // // // // // // // // // // // //
+
+    void CheckActiveAttacks()
+    {
+        Capybara cap = activeCapybara.GetComponent<Capybara>();
+        BattleUI battleUI = FindAnyObjectByType<BattleUI>();
+
+        if (cap.canUseFirstAttack)
+        {
+            battleUI.AlternateFirstButton(true, cap.firstAttackName);           
+        }
+        else
+        {
+            battleUI.AlternateFirstButton(false, cap.firstAttackName);
+        }
+
+        if (cap.canUseSecondAttack)
+        {
+            battleUI.AlternateSecondButton(true, cap.secondAttackName);
+        }
+        else
+        {
+            battleUI.AlternateSecondButton(false, cap.secondAttackName);
+        }
+
+        if (cap.canUseThirdAttack)
+        {
+            battleUI.AlternateThirdButton(true, cap.thirdAttackName);
+        }
+        else
+        {
+            battleUI.AlternateThirdButton(false, cap.thirdAttackName);
+        }
+
+        if (cap.canUseFourthAttack)
+        {
+            battleUI.AlternateFourthButton(true, cap.fourthAttackName);
+        }
+        else
+        {
+            battleUI.AlternateFourthButton(false, cap.fourthAttackName);
+        }
     }
 }

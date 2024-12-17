@@ -144,7 +144,7 @@ public class Capybara : MonoBehaviour
         this.capybaraXP = WildData.instance.dataXp;
 
         this.weaknessMultiplier = WildData.instance.dataWeaknessMultiplier;
-        this.resistance = WildData.instance.dataResistenceMultiplier;
+        this.resistance = WildData.instance.dataResistence;
 
         this.canUseFirstAttack = WildData.instance.dataCanUseFirstAttack;
         this.canUseSecondAttack = WildData.instance.dataCanUseSecondAttack;

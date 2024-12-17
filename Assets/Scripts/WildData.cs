@@ -18,7 +18,7 @@ public class WildData : MonoBehaviour
     public int dataXp;
 
     public int dataWeaknessMultiplier;
-    public int dataResistenceMultiplier;
+    public int dataResistence;
 
     public bool dataCanUseFirstAttack;
     public bool dataCanUseSecondAttack;
@@ -65,7 +65,7 @@ public class WildData : MonoBehaviour
             dataXp = other.capybaraXP;
 
             dataWeaknessMultiplier = other.weaknessMultiplier;
-            dataResistenceMultiplier = other.resistance;
+            dataResistence = other.resistance;
 
             dataCanUseFirstAttack = other.canUseFirstAttack;
             dataCanUseSecondAttack = other.canUseSecondAttack;
@@ -148,7 +148,7 @@ public class WildData : MonoBehaviour
             dataStrenght = 0;
             dataSpeed = 0;
             dataWeaknessMultiplier = 0;
-            dataResistenceMultiplier = 0;
+            dataResistence = 0;
 
             dataCanUseFirstAttack = false;
             dataCanUseSecondAttack = false;
