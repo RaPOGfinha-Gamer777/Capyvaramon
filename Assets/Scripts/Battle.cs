@@ -26,6 +26,10 @@ public class Battle : MonoBehaviour
         }
 
         activeEnemy = GameObject.FindGameObjectWithTag("Enemy");
+        Capybara cap = activeEnemy.GetComponent<Capybara>();
+
+        BattleUI battleUI = FindAnyObjectByType<BattleUI>();
+        battleUI.UpdateOutputText("A wild " + cap.capybaraName + " appeared!");
 
         if (activeCapybara != null)
         {
@@ -53,6 +57,7 @@ public class Battle : MonoBehaviour
     public void AttackWithFirst()
     {
         Capybara cap = activeCapybara.GetComponent<Capybara>();
+        BattleUI battleUI = FindAnyObjectByType<BattleUI>();
 
         if (cap.firstAttackCost <= cap.powerPoints)
         {
@@ -207,5 +212,6 @@ public class Battle : MonoBehaviour
         BattleUI battleUI = FindAnyObjectByType<BattleUI>();
 
         battleUI.UpdateUICard(capybara.capybaraName, capybara.capybaraLevel, capybara.health, capybara.maxHealth, capybara.powerPoints, capybara.maxPowerPoints);
+        battleUI.UpdateEffectivenessText("What will " + capybara.capybaraName + " do?");
     }
 }
