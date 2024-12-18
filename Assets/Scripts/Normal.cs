@@ -23,6 +23,8 @@ public class Normal : Capybara
 
         this.powerPoints -= this.firstAttackCost;
 
+        SendDamageEffectivenessText(this.weaknessMultiplier, this.resistance);
+
         other.TakeDamage(this.strenght, this.weaknessMultiplier, this.resistance);
     }
 
@@ -34,6 +36,8 @@ public class Normal : Capybara
         Capybara other = battle.activeEnemy.GetComponent<Capybara>();
 
         this.powerPoints -= this.secondAttackCost;
+
+        SendDamageEffectivenessText(this.weaknessMultiplier, this.resistance);
 
         int damage = CalculateDamage(this.strenght, 0.75f);
         other.TakeDamage(damage, this.weaknessMultiplier, this.resistance);
@@ -48,6 +52,8 @@ public class Normal : Capybara
 
         this.powerPoints -= this.thirdAttackCost;
 
+        SendDamageEffectivenessText(this.weaknessMultiplier, this.resistance);
+
         int damage = CalculateDamage(this.strenght, 1.5f);
         other.TakeDamage(damage, this.weaknessMultiplier, this.resistance);
     }
@@ -55,6 +61,7 @@ public class Normal : Capybara
     public override void UseFourthAttack()
     {
         base.UseFourthAttack();
-        Debug.Log("SPECIAL MOVE!!!");
+
+        SendDamageEffectivenessText(this.weaknessMultiplier, this.resistance);
     }
 }

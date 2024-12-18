@@ -11,7 +11,7 @@ public class Grass : Capybara
 
         this.firstAttackName = "Seed Throw";
         this.thirdAttackName = "Vine Slash";
-        this.fourthAttackName = "Leaf Shield";
+        this.fourthAttackName = "Friendly Nature";
     }
 
     public override void UseFirstAttack()
@@ -21,18 +21,13 @@ public class Grass : Capybara
         Battle battle = FindAnyObjectByType<Battle>();
         Capybara other = battle.activeEnemy.GetComponent<Capybara>();
 
-        if (other.type == "Water")
-        {
-            this.weaknessMultiplier = 2;
-            Debug.Log("VERY EFFECTIVE!!!");
-        }
-        else if (other.type == "Fairy")
-        {
-            this.resistance = 30; // resistencia base em todas as capivaras
-            Debug.Log("NOT VERY EFFECTIVE!!!");
-        }
+        if (other.type == "Water") this.weaknessMultiplier = 2;
+
+        else if (other.type == "Fairy") this.resistance = 30;
 
         this.powerPoints -= this.firstAttackCost;
+
+        SendDamageEffectivenessText(this.weaknessMultiplier, this.resistance);
 
         other.TakeDamage(this.strenght, this.weaknessMultiplier, this.resistance);
     }
@@ -46,6 +41,8 @@ public class Grass : Capybara
 
         this.powerPoints -= this.secondAttackCost;
 
+        SendDamageEffectivenessText(this.weaknessMultiplier, this.resistance);
+
         int damage = CalculateDamage(this.strenght, 0.75f);
         other.TakeDamage(damage, this.weaknessMultiplier, this.resistance);
     }
@@ -57,18 +54,13 @@ public class Grass : Capybara
         Battle battle = FindAnyObjectByType<Battle>();
         Capybara other = battle.activeEnemy.GetComponent<Capybara>();
 
-        if (other.type == "Water")
-        {
-            this.weaknessMultiplier = 2;
-            Debug.Log("VERY EFFECTIVE!!!");
-        }
-        else if (other.type == "Fairy")
-        {
-            this.resistance = 30; // resistencia base em todas as capivaras
-            Debug.Log("NOT VERY EFFECTIVE!!!");
-        }
+        if (other.type == "Water") this.weaknessMultiplier = 2;
+
+        else if (other.type == "Fairy") this.resistance = 30;
 
         this.powerPoints -= this.thirdAttackCost;
+
+        SendDamageEffectivenessText(this.weaknessMultiplier, this.resistance);
 
         int damage = CalculateDamage(this.strenght, 1.5f);
         other.TakeDamage(damage, this.weaknessMultiplier, this.resistance);
@@ -77,6 +69,7 @@ public class Grass : Capybara
     public override void UseFourthAttack()
     {
         base.UseFourthAttack();
-        Debug.Log("SPECIAL MOVE!!!");
+
+        SendDamageEffectivenessText(this.weaknessMultiplier, this.resistance);
     }
 }

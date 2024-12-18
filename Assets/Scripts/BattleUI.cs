@@ -84,6 +84,14 @@ public class BattleUI : MonoBehaviour
 
     public void RunAway()
     {
+        PlayerData playerData = FindAnyObjectByType<PlayerData>();
+        
+        for (int i = 0; i < playerData.teamCapybaras.Count; i++) // para resetar o especial das capivaras normais 
+        {
+            Capybara capybara = playerData.teamCapybaras[i].GetComponent<Capybara>();
+            capybara.weaknessMultiplier = 1;
+        }
+
         SceneManager.LoadScene("GameScene");
     }
 

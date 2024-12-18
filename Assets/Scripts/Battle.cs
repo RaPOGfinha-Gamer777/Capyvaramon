@@ -33,7 +33,7 @@ public class Battle : MonoBehaviour
         if (activeCapybara != null)
         {
             Capybara activeCap = activeCapybara.GetComponent<Capybara>();
-            SendEffectivenessText("What wil " + activeCap.capybaraName + " do?");
+            SendEffectivenessText("What will " + activeCap.capybaraName + " do?");
 
             CheckActiveAttacks();
             SendUIInfo();
@@ -67,7 +67,11 @@ public class Battle : MonoBehaviour
 
             EndTurn();
         }
-        else Debug.Log("pontos insuficientes!");
+        else
+        {
+            SendOutputText("Not enough power points!");
+            SendEffectivenessText("");
+        }
     }
 
     public void AttackWithSecond()
@@ -81,7 +85,11 @@ public class Battle : MonoBehaviour
             
             EndTurn();
         }
-        else Debug.Log("pontos insuficientes!");
+        else
+        {
+            SendOutputText("Not enough power points!");
+            SendEffectivenessText("");
+        }
     }
 
     public void AttackWithThird()
@@ -95,7 +103,11 @@ public class Battle : MonoBehaviour
             
             EndTurn();
         }
-        else Debug.Log("pontos insuficientes!");
+        else
+        {
+            SendOutputText("Not enough power points!");
+            SendEffectivenessText("");
+        }
     }
 
     public void AttackWithFourth()
@@ -109,7 +121,11 @@ public class Battle : MonoBehaviour
             
             EndTurn();
         }
-        else Debug.Log("pontos insuficientes!");
+        else
+        {
+            SendOutputText("Not enough power points!");
+            SendEffectivenessText("");
+        }
     }
 
     // // // // // // // // // // // // // // // // // // // // // 
@@ -236,8 +252,21 @@ public class Battle : MonoBehaviour
     void EndTurn()
     {
         Capybara capybara = activeCapybara.GetComponent<Capybara>();
-        capybara.weaknessMultiplier = 1;
-        capybara.resistance = 0;
+        Capybara enemy = activeEnemy.GetComponent<Capybara>();
+
+        if (capybara.type != "Normal") // para prevalecer o critico ao usar o especial
+        {
+            capybara.weaknessMultiplier = 1;
+        }
+
+        if (enemy.type != "Normal") // para prevalecer o critico ao usar o especial
+        {
+            enemy.weaknessMultiplier = 1;
+        }
+
+        capybara.resistance = 0;      
+        enemy.resistance = 0;
+
         // se tiver queimado, recebe dano
         // se tiver paralizado, pula a vez
     }

@@ -114,7 +114,7 @@ public class Capybara : MonoBehaviour
     {
         BattleUI battleUI = FindAnyObjectByType<BattleUI>();
         
-        if (weaknessMult == 2)
+        if (weaknessMult > 1)
         {
             battleUI.UpdateEffectivenessText("VERY EFFECTIVE!");
         }
