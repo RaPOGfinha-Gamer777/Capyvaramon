@@ -70,11 +70,13 @@ public class BattleUI : MonoBehaviour
 
     public void UpdateOutputText(string output)
     {
+        OpenOutputTab();
         outputText.text = output;
     }
 
     public void UpdateEffectivenessText(string output)
     {
+        OpenOutputTab();
         effectivenessText.text = output;
     }
 

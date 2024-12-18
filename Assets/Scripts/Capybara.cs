@@ -66,26 +66,36 @@ public class Capybara : MonoBehaviour
     public virtual void UseFirstAttack()
     {
         if (isFainted || isParalyzed || !canUseFirstAttack || firstAttackCost > powerPoints) return;
-        Debug.Log(firstAttackName);
+
+        BattleUI battleUI = FindAnyObjectByType<BattleUI>();
+        battleUI.UpdateOutputText(capybaraName + "used " + firstAttackName + "!");
     }
 
     public virtual void UseSecondAttack()
     {
         if (isFainted || isParalyzed || !canUseSecondAttack || secondAttackCost > powerPoints) return;
-        Debug.Log(secondAttackName);
+
+        BattleUI battleUI = FindAnyObjectByType<BattleUI>();
+        battleUI.UpdateOutputText(capybaraName + "used " + secondAttackName + "!");
     }
 
     public virtual void UseThirdAttack()
     {
         if (isFainted || isParalyzed || !canUseThirdAttack || thirdAttackCost > powerPoints) return;
-        Debug.Log(thirdAttackName);
+
+        BattleUI battleUI = FindAnyObjectByType<BattleUI>();
+        battleUI.UpdateOutputText(capybaraName + "used " + thirdAttackName + "!");
     }
 
     public virtual void UseFourthAttack()
     {
         if (isFainted || isParalyzed || !canUseFourthAttack || fourthAttackCost > powerPoints) return;
-        Debug.Log(fourthAttackName);
+
+        BattleUI battleUI = FindAnyObjectByType<BattleUI>();
+        battleUI.UpdateOutputText(capybaraName + " used " + fourthAttackName + "!");
     }
+
+    // // /// // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
 
     public virtual void TakeDamage(int  damage, int multiplier, int resist)
     {
@@ -98,6 +108,24 @@ public class Capybara : MonoBehaviour
         float floatDamage = strenght * multiplier;
         int damage = Mathf.RoundToInt(floatDamage);
         return damage;
+    }
+
+    protected void SendDamageEffectivenessText(int weaknessMult, int resistance)
+    {
+        BattleUI battleUI = FindAnyObjectByType<BattleUI>();
+        
+        if (weaknessMult == 2)
+        {
+            battleUI.UpdateEffectivenessText("VERY EFFECTIVE!");
+        }
+        if (resistance == 30)
+        {
+            battleUI.UpdateEffectivenessText("NOT VERY EFFECTIVE!");
+        }
+        else if (resistance == 0 && weaknessMult == 1)
+        {
+            battleUI.UpdateEffectivenessText("");
+        }
     }
 
     // ////////////////////////////////////////////////////////////////////////////////

@@ -48,7 +48,6 @@ public class Capture : MonoBehaviour
         capybara.state = "Players";
 
         BattleUI battleUI = FindAnyObjectByType<BattleUI>();
-        battleUI.OpenOutputTab();
         battleUI.UpdateOutputText(capybara.capybaraName + " was caught!");
         battleUI.UpdateEffectivenessText("Congratulations!");
 

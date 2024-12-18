@@ -28,11 +28,13 @@ public class Battle : MonoBehaviour
         activeEnemy = GameObject.FindGameObjectWithTag("Enemy");
         Capybara cap = activeEnemy.GetComponent<Capybara>();
 
-        BattleUI battleUI = FindAnyObjectByType<BattleUI>();
-        battleUI.UpdateOutputText("A wild " + cap.capybaraName + " appeared!");
+        SendOutputText("A wild " + cap.capybaraName + " appeared!");
 
         if (activeCapybara != null)
         {
+            Capybara activeCap = activeCapybara.GetComponent<Capybara>();
+            SendEffectivenessText("What wil " + activeCap.capybaraName + " do?");
+
             CheckActiveAttacks();
             SendUIInfo();
         }
@@ -57,13 +59,13 @@ public class Battle : MonoBehaviour
     public void AttackWithFirst()
     {
         Capybara cap = activeCapybara.GetComponent<Capybara>();
-        BattleUI battleUI = FindAnyObjectByType<BattleUI>();
 
         if (cap.firstAttackCost <= cap.powerPoints)
         {
             cap.UseFirstAttack();
             SendUIInfo();
-            // funcao para passar o turno
+
+            EndTurn();
         }
         else Debug.Log("pontos insuficientes!");
     }
@@ -76,7 +78,8 @@ public class Battle : MonoBehaviour
         {
             cap.UseSecondAttack();
             SendUIInfo();
-            // funcao para passar o turno
+            
+            EndTurn();
         }
         else Debug.Log("pontos insuficientes!");
     }
@@ -89,7 +92,8 @@ public class Battle : MonoBehaviour
         {
             cap.UseThirdAttack();
             SendUIInfo();
-            // funcao para passar o turno
+            
+            EndTurn();
         }
         else Debug.Log("pontos insuficientes!");
     }
@@ -102,7 +106,8 @@ public class Battle : MonoBehaviour
         {
             cap.UseFourthAttack();
             SendUIInfo();
-            // funcao para passar o turno
+            
+            EndTurn();
         }
         else Debug.Log("pontos insuficientes!");
     }
@@ -212,6 +217,28 @@ public class Battle : MonoBehaviour
         BattleUI battleUI = FindAnyObjectByType<BattleUI>();
 
         battleUI.UpdateUICard(capybara.capybaraName, capybara.capybaraLevel, capybara.health, capybara.maxHealth, capybara.powerPoints, capybara.maxPowerPoints);
-        battleUI.UpdateEffectivenessText("What will " + capybara.capybaraName + " do?");
+    }
+
+    void SendOutputText(string output)
+    {
+        BattleUI battleUI = FindAnyObjectByType<BattleUI>();
+        battleUI.UpdateOutputText(output);
+    }
+
+    void SendEffectivenessText(string output)
+    {
+        BattleUI battleUI = FindAnyObjectByType<BattleUI>();
+        battleUI.UpdateEffectivenessText(output);
+    }
+
+    // // // // // // // // // // // // // // // // // // //
+
+    void EndTurn()
+    {
+        Capybara capybara = activeCapybara.GetComponent<Capybara>();
+        capybara.weaknessMultiplier = 1;
+        capybara.resistance = 0;
+        // se tiver queimado, recebe dano
+        // se tiver paralizado, pula a vez
     }
 }
