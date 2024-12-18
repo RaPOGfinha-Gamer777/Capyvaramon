@@ -68,7 +68,7 @@ public class Capybara : MonoBehaviour
         if (isFainted || isParalyzed || !canUseFirstAttack || firstAttackCost > powerPoints) return;
 
         BattleUI battleUI = FindAnyObjectByType<BattleUI>();
-        battleUI.UpdateOutputText(capybaraName + "used " + firstAttackName + "!");
+        battleUI.UpdateOutputText(capybaraName + " used " + firstAttackName + "!");
     }
 
     public virtual void UseSecondAttack()
@@ -76,7 +76,7 @@ public class Capybara : MonoBehaviour
         if (isFainted || isParalyzed || !canUseSecondAttack || secondAttackCost > powerPoints) return;
 
         BattleUI battleUI = FindAnyObjectByType<BattleUI>();
-        battleUI.UpdateOutputText(capybaraName + "used " + secondAttackName + "!");
+        battleUI.UpdateOutputText(capybaraName + " used " + secondAttackName + "!");
     }
 
     public virtual void UseThirdAttack()
@@ -84,7 +84,7 @@ public class Capybara : MonoBehaviour
         if (isFainted || isParalyzed || !canUseThirdAttack || thirdAttackCost > powerPoints) return;
 
         BattleUI battleUI = FindAnyObjectByType<BattleUI>();
-        battleUI.UpdateOutputText(capybaraName + "used " + thirdAttackName + "!");
+        battleUI.UpdateOutputText(capybaraName + " used " + thirdAttackName + "!");
     }
 
     public virtual void UseFourthAttack()

@@ -40,22 +40,6 @@ public class Battle : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            SwitchWitchFirst();
-        }
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            SwitchWitchSecond();
-        }
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            SwitchWitchThird();
-        }
-    }
-
     public void AttackWithFirst()
     {
         Capybara cap = activeCapybara.GetComponent<Capybara>();
@@ -134,6 +118,9 @@ public class Battle : MonoBehaviour
     {
         if (activeSprite != teamSprites[0])
         {
+            Capybara currentActive = activeCapybara.GetComponent<Capybara>();
+            SendOutputText("Go get some rest " + currentActive.capybaraName + "!");
+
             activeSprite.SetActive(false);
             activeSprite = teamSprites[0];
             activeSprite.SetActive(true);
@@ -141,16 +128,26 @@ public class Battle : MonoBehaviour
             PlayerData playerData = FindAnyObjectByType<PlayerData>();
             activeCapybara = playerData.teamCapybaras[0];
 
+            Capybara newActive = activeCapybara.GetComponent<Capybara>();
+            SendEffectivenessText("Go " + newActive.capybaraName + "!");
+
             CheckActiveAttacks();
             SendUIInfo();
         }
-        else Debug.Log("Essa já é sua capivara ativa");
+        else
+        {
+            SendOutputText("This is already your active capybara!");
+            SendEffectivenessText("");
+        }
     }
 
     public void SwitchWitchSecond()
     {
         if (activeSprite != teamSprites[1])
         {
+            Capybara currentActive = activeCapybara.GetComponent<Capybara>();
+            SendOutputText("Go get some rest " + currentActive.capybaraName + "!");
+
             activeSprite.SetActive(false);
             activeSprite = teamSprites[1];
             activeSprite.SetActive(true);
@@ -158,16 +155,26 @@ public class Battle : MonoBehaviour
             PlayerData playerData = FindAnyObjectByType<PlayerData>();
             activeCapybara = playerData.teamCapybaras[1];
 
+            Capybara newActive = activeCapybara.GetComponent<Capybara>();
+            SendEffectivenessText("Go " + newActive.capybaraName + "!");
+
             CheckActiveAttacks();
             SendUIInfo();
         }
-        else Debug.Log("Essa já é sua capivara ativa");
+        else
+        {
+            SendOutputText("This is already your active capybara!");
+            SendEffectivenessText("");
+        }
     }
 
     public void SwitchWitchThird()
     {
         if (activeSprite != teamSprites[2])
         {
+            Capybara currentActive = activeCapybara.GetComponent<Capybara>();
+            SendOutputText("Go get some rest " + currentActive.capybaraName + "!");
+
             activeSprite.SetActive(false);
             activeSprite = teamSprites[2];
             activeSprite.SetActive(true);
@@ -175,10 +182,17 @@ public class Battle : MonoBehaviour
             PlayerData playerData = FindAnyObjectByType<PlayerData>();
             activeCapybara = playerData.teamCapybaras[2];
 
+            Capybara newActive = activeCapybara.GetComponent<Capybara>();
+            SendEffectivenessText("Go " + newActive.capybaraName + "!");
+
             CheckActiveAttacks();
             SendUIInfo();
         }
-        else Debug.Log("Essa já é sua capivara ativa");
+        else
+        {
+            SendOutputText("This is already your active capybara!");
+            SendEffectivenessText("");
+        }
     }
 
     // // // // // // // // // // // // // // // // // // // // // // //

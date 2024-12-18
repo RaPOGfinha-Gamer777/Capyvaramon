@@ -9,6 +9,9 @@ public class BattleUI : MonoBehaviour
 {
     public GameObject[] attackButtons;
     public GameObject[] battleTabs;
+    public GameObject[] teamButtons;
+
+    public GameObject optionsTab;
 
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI levelText;
@@ -17,6 +20,16 @@ public class BattleUI : MonoBehaviour
 
     public TextMeshProUGUI outputText;
     public TextMeshProUGUI effectivenessText;
+
+    private void Start()
+    {
+        PlayerData playerData = FindAnyObjectByType<PlayerData>();
+
+        for (int i = 0; i < playerData.teamCapybaras.Count; i++)
+        {
+            teamButtons[i].SetActive(true);
+        }
+    }
 
     public void AlternateFirstButton(bool canUse, string attackName, string attackCost)
     {
@@ -95,6 +108,12 @@ public class BattleUI : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
+    public void QuitAfterCapture()
+    {
+        optionsTab.gameObject.SetActive(false);
+        Invoke(nameof(RunAway), 3); // tempo da musica de captura
+    }
+
     public void OpenOutputTab()
     {
         CloseUITabs();
@@ -111,6 +130,12 @@ public class BattleUI : MonoBehaviour
     {
         CloseUITabs();
         battleTabs[2].SetActive(true);
+    }
+
+    public void OpenTeamTab()
+    {
+        CloseUITabs();
+        battleTabs[3].SetActive(true);
     }
 
     void CloseUITabs()

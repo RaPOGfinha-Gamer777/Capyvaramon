@@ -300,7 +300,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Descartar
+  m_text: Set free
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1745,7 +1745,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Capivaras
+  m_text: Capybaras
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2403,6 +2403,7 @@ MonoBehaviour:
   capybaraName: 
   type: 
   state: Wild
+  maxHealth: 0
   health: 0
   strenght: 0
   speed: 0
@@ -2425,6 +2426,10 @@ MonoBehaviour:
   canUseSecondAttack: 0
   canUseThirdAttack: 0
   canUseFourthAttack: 0
+  firstAttackCost: 0
+  secondAttackCost: 0
+  thirdAttackCost: 0
+  fourthAttackCost: 0
   powerPoints: 0
   maxPowerPoints: 0
 --- !u!1 &519420028
@@ -2812,6 +2817,7 @@ MonoBehaviour:
   capybaraName: 
   type: 
   state: Wild
+  maxHealth: 0
   health: 0
   strenght: 0
   speed: 0
@@ -2834,6 +2840,10 @@ MonoBehaviour:
   canUseSecondAttack: 0
   canUseThirdAttack: 0
   canUseFourthAttack: 0
+  firstAttackCost: 0
+  secondAttackCost: 0
+  thirdAttackCost: 0
+  fourthAttackCost: 0
   powerPoints: 0
   maxPowerPoints: 0
 --- !u!1 &537554872
@@ -2893,7 +2903,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Capidex
+  m_text: Capydex
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3267,7 +3277,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: EM BREVE
+  m_text: '[Items]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3544,7 +3554,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Itens
+  m_text: Items
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4127,6 +4137,7 @@ MonoBehaviour:
   capybaraName: 
   type: 
   state: Wild
+  maxHealth: 0
   health: 0
   strenght: 0
   speed: 0
@@ -4149,6 +4160,10 @@ MonoBehaviour:
   canUseSecondAttack: 0
   canUseThirdAttack: 0
   canUseFourthAttack: 0
+  firstAttackCost: 0
+  secondAttackCost: 0
+  thirdAttackCost: 0
+  fourthAttackCost: 0
   powerPoints: 0
   maxPowerPoints: 0
 --- !u!1 &780509049
@@ -4551,6 +4566,7 @@ MonoBehaviour:
   capybaraName: 
   type: 
   state: Wild
+  maxHealth: 0
   health: 0
   strenght: 0
   speed: 0
@@ -4573,6 +4589,10 @@ MonoBehaviour:
   canUseSecondAttack: 0
   canUseThirdAttack: 0
   canUseFourthAttack: 0
+  firstAttackCost: 0
+  secondAttackCost: 0
+  thirdAttackCost: 0
+  fourthAttackCost: 0
   powerPoints: 0
   maxPowerPoints: 0
 --- !u!1 &844582749
@@ -4721,6 +4741,7 @@ MonoBehaviour:
   capybaraName: 
   type: 
   state: Wild
+  maxHealth: 0
   health: 0
   strenght: 0
   speed: 0
@@ -4743,6 +4764,10 @@ MonoBehaviour:
   canUseSecondAttack: 0
   canUseThirdAttack: 0
   canUseFourthAttack: 0
+  firstAttackCost: 0
+  secondAttackCost: 0
+  thirdAttackCost: 0
+  fourthAttackCost: 0
   powerPoints: 0
   maxPowerPoints: 0
 --- !u!1 &860647407
@@ -5025,6 +5050,7 @@ MonoBehaviour:
   capybaraName: 
   type: 
   state: Wild
+  maxHealth: 0
   health: 0
   strenght: 0
   speed: 0
@@ -5047,6 +5073,10 @@ MonoBehaviour:
   canUseSecondAttack: 0
   canUseThirdAttack: 0
   canUseFourthAttack: 0
+  firstAttackCost: 0
+  secondAttackCost: 0
+  thirdAttackCost: 0
+  fourthAttackCost: 0
   powerPoints: 0
   maxPowerPoints: 0
 --- !u!1 &882891720
@@ -5887,6 +5917,7 @@ MonoBehaviour:
   capybaraName: 
   type: 
   state: Wild
+  maxHealth: 0
   health: 0
   strenght: 0
   speed: 0
@@ -5909,6 +5940,10 @@ MonoBehaviour:
   canUseSecondAttack: 0
   canUseThirdAttack: 0
   canUseFourthAttack: 0
+  firstAttackCost: 0
+  secondAttackCost: 0
+  thirdAttackCost: 0
+  fourthAttackCost: 0
   powerPoints: 0
   maxPowerPoints: 0
 --- !u!1 &1190994111
@@ -6568,6 +6603,7 @@ MonoBehaviour:
   capybaraName: 
   type: 
   state: Wild
+  maxHealth: 0
   health: 0
   strenght: 0
   speed: 0
@@ -6590,6 +6626,10 @@ MonoBehaviour:
   canUseSecondAttack: 0
   canUseThirdAttack: 0
   canUseFourthAttack: 0
+  firstAttackCost: 0
+  secondAttackCost: 0
+  thirdAttackCost: 0
+  fourthAttackCost: 0
   powerPoints: 0
   maxPowerPoints: 0
 --- !u!1 &1312357530
@@ -6738,6 +6778,7 @@ MonoBehaviour:
   capybaraName: 
   type: 
   state: Wild
+  maxHealth: 0
   health: 0
   strenght: 0
   speed: 0
@@ -6760,6 +6801,10 @@ MonoBehaviour:
   canUseSecondAttack: 0
   canUseThirdAttack: 0
   canUseFourthAttack: 0
+  firstAttackCost: 0
+  secondAttackCost: 0
+  thirdAttackCost: 0
+  fourthAttackCost: 0
   powerPoints: 0
   maxPowerPoints: 10
 --- !u!1 &1317021110
@@ -6819,7 +6864,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Equipe
+  m_text: Team
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7925,6 +7970,7 @@ MonoBehaviour:
   capybaraName: 
   type: 
   state: Wild
+  maxHealth: 0
   health: 0
   strenght: 0
   speed: 0
@@ -7947,6 +7993,10 @@ MonoBehaviour:
   canUseSecondAttack: 0
   canUseThirdAttack: 0
   canUseFourthAttack: 0
+  firstAttackCost: 0
+  secondAttackCost: 0
+  thirdAttackCost: 0
+  fourthAttackCost: 0
   powerPoints: 0
   maxPowerPoints: 0
 --- !u!1 &1517660681
@@ -7962,7 +8012,7 @@ GameObject:
   - component: {fileID: 1517660684}
   - component: {fileID: 1517660683}
   m_Layer: 5
-  m_Name: Button_Itens
+  m_Name: Button_Items
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8034,7 +8084,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 319798383}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: OpenItens
+        m_MethodName: OpenItems
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8573,6 +8623,7 @@ MonoBehaviour:
   capybaraName: 
   type: 
   state: Wild
+  maxHealth: 0
   health: 0
   strenght: 0
   speed: 0
@@ -8595,6 +8646,10 @@ MonoBehaviour:
   canUseSecondAttack: 0
   canUseThirdAttack: 0
   canUseFourthAttack: 0
+  firstAttackCost: 0
+  secondAttackCost: 0
+  thirdAttackCost: 0
+  fourthAttackCost: 0
   powerPoints: 0
   maxPowerPoints: 0
 --- !u!1 &1753645748
@@ -9285,6 +9340,7 @@ MonoBehaviour:
   capybaraName: 
   type: 
   state: Wild
+  maxHealth: 0
   health: 0
   strenght: 0
   speed: 0
@@ -9307,6 +9363,10 @@ MonoBehaviour:
   canUseSecondAttack: 0
   canUseThirdAttack: 0
   canUseFourthAttack: 0
+  firstAttackCost: 0
+  secondAttackCost: 0
+  thirdAttackCost: 0
+  fourthAttackCost: 0
   powerPoints: 0
   maxPowerPoints: 0
 --- !u!1 &1831050483
@@ -9705,6 +9765,7 @@ MonoBehaviour:
   capybaraName: 
   type: 
   state: Wild
+  maxHealth: 0
   health: 0
   strenght: 0
   speed: 0
@@ -9727,6 +9788,10 @@ MonoBehaviour:
   canUseSecondAttack: 0
   canUseThirdAttack: 0
   canUseFourthAttack: 0
+  firstAttackCost: 0
+  secondAttackCost: 0
+  thirdAttackCost: 0
+  fourthAttackCost: 0
   powerPoints: 0
   maxPowerPoints: 0
 --- !u!1 &1858669713
@@ -10052,7 +10117,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Colocar na Equipe
+  m_text: Put on the team
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10362,6 +10427,7 @@ MonoBehaviour:
   capybaraName: 
   type: 
   state: Wild
+  maxHealth: 0
   health: 0
   strenght: 0
   speed: 0
@@ -10384,6 +10450,10 @@ MonoBehaviour:
   canUseSecondAttack: 0
   canUseThirdAttack: 0
   canUseFourthAttack: 0
+  firstAttackCost: 0
+  secondAttackCost: 0
+  thirdAttackCost: 0
+  fourthAttackCost: 0
   powerPoints: 0
   maxPowerPoints: 0
 --- !u!1 &1888775917
@@ -10532,6 +10602,7 @@ MonoBehaviour:
   capybaraName: 
   type: 
   state: Wild
+  maxHealth: 0
   health: 0
   strenght: 0
   speed: 0
@@ -10554,6 +10625,10 @@ MonoBehaviour:
   canUseSecondAttack: 0
   canUseThirdAttack: 0
   canUseFourthAttack: 0
+  firstAttackCost: 0
+  secondAttackCost: 0
+  thirdAttackCost: 0
+  fourthAttackCost: 0
   powerPoints: 0
   maxPowerPoints: 0
 --- !u!1 &1934481552
@@ -10691,7 +10766,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Remover da Equipe
+  m_text: Remove from team
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10914,6 +10989,7 @@ MonoBehaviour:
   capybaraName: 
   type: 
   state: Wild
+  maxHealth: 0
   health: 0
   strenght: 0
   speed: 0
@@ -10936,6 +11012,10 @@ MonoBehaviour:
   canUseSecondAttack: 0
   canUseThirdAttack: 0
   canUseFourthAttack: 0
+  firstAttackCost: 0
+  secondAttackCost: 0
+  thirdAttackCost: 0
+  fourthAttackCost: 0
   powerPoints: 0
   maxPowerPoints: 0
 --- !u!1 &2001212949
@@ -11115,7 +11195,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Invent\xE1rio"
+  m_text: Bag
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11360,16 +11440,21 @@ MonoBehaviour:
   dataType: 
   dataState: 
   dataHealth: 0
+  dataMaxHealth: 0
   dataStrenght: 0
   dataSpeed: 0
   dataLevel: 0
   dataXp: 0
   dataWeaknessMultiplier: 0
-  dataResistenceMultiplier: 0
+  dataResistence: 0
   dataCanUseFirstAttack: 0
   dataCanUseSecondAttack: 0
   dataCanUseThirdAttack: 0
   dataCanUseFourthAttack: 0
+  dataFirstAttackCost: 0
+  dataSecondAttackCost: 0
+  dataThirdAttackCost: 0
+  dataFourthAttackCost: 0
   dataMaxPowerPoints: 0
   dataPowerPoints: 0
 --- !u!1 &2088107903
@@ -11429,7 +11514,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Invent\xE1rio"
+  m_text: Bag
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11456,8 +11541,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
-  m_fontSizeBase: 32
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -11652,6 +11737,7 @@ MonoBehaviour:
   capybaraName: 
   type: 
   state: Wild
+  maxHealth: 0
   health: 0
   strenght: 0
   speed: 0
@@ -11674,6 +11760,10 @@ MonoBehaviour:
   canUseSecondAttack: 0
   canUseThirdAttack: 0
   canUseFourthAttack: 0
+  firstAttackCost: 0
+  secondAttackCost: 0
+  thirdAttackCost: 0
+  fourthAttackCost: 0
   powerPoints: 0
   maxPowerPoints: 0
 --- !u!1 &2127748188

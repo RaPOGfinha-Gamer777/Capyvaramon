@@ -65,7 +65,7 @@ public class Inventory : MonoBehaviour
         statsInfo.SetActive(true);
     }
 
-    public void OpenItens()
+    public void OpenItems()
     {
         CloseAllTabs();
         invetoryTabs[3].SetActive(true);
