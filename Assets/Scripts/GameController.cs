@@ -114,7 +114,9 @@ public class GameController : MonoBehaviour
                     SetCapybaraStats(cap, ghostMinHP, ghostMaxHP, ghostMinStrenght, ghostMaxStrenght, ghostMinSpeed, ghostMaxSpeed);
                 }
 
-                cap.maxPowerPoints = 15;
+                cap.maxHealth = cap.health;
+
+                cap.maxPowerPoints = 15; // maximo de poder default
                 cap.powerPoints = 15;
 
                 cap.firstAttackCost = 3; // todos os ataques (menos o especial) tem o mesmo custo 

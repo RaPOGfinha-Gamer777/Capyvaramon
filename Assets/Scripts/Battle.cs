@@ -24,8 +24,14 @@ public class Battle : MonoBehaviour
             PlayerData playerData = FindAnyObjectByType<PlayerData>();
             activeCapybara = playerData.teamCapybaras[0];
         }
+
         activeEnemy = GameObject.FindGameObjectWithTag("Enemy");
-        CheckActiveAttacks();
+
+        if (activeCapybara != null)
+        {
+            CheckActiveAttacks();
+            SendUIInfo();
+        }
     }
 
     private void Update()
@@ -51,6 +57,7 @@ public class Battle : MonoBehaviour
         if (cap.firstAttackCost <= cap.powerPoints)
         {
             cap.UseFirstAttack();
+            SendUIInfo();
             // funcao para passar o turno
         }
         else Debug.Log("pontos insuficientes!");
@@ -63,6 +70,7 @@ public class Battle : MonoBehaviour
         if (cap.secondAttackCost <= cap.powerPoints)
         {
             cap.UseSecondAttack();
+            SendUIInfo();
             // funcao para passar o turno
         }
         else Debug.Log("pontos insuficientes!");
@@ -75,6 +83,7 @@ public class Battle : MonoBehaviour
         if (cap.thirdAttackCost <= cap.powerPoints)
         {
             cap.UseThirdAttack();
+            SendUIInfo();
             // funcao para passar o turno
         }
         else Debug.Log("pontos insuficientes!");
@@ -87,6 +96,7 @@ public class Battle : MonoBehaviour
         if (cap.fourthAttackCost <= cap.powerPoints)
         {
             cap.UseFourthAttack();
+            SendUIInfo();
             // funcao para passar o turno
         }
         else Debug.Log("pontos insuficientes!");
@@ -106,6 +116,7 @@ public class Battle : MonoBehaviour
             activeCapybara = playerData.teamCapybaras[0];
 
             CheckActiveAttacks();
+            SendUIInfo();
         }
         else Debug.Log("Essa já é sua capivara ativa");
     }
@@ -122,6 +133,7 @@ public class Battle : MonoBehaviour
             activeCapybara = playerData.teamCapybaras[1];
 
             CheckActiveAttacks();
+            SendUIInfo();
         }
         else Debug.Log("Essa já é sua capivara ativa");
     }
@@ -138,6 +150,7 @@ public class Battle : MonoBehaviour
             activeCapybara = playerData.teamCapybaras[2];
 
             CheckActiveAttacks();
+            SendUIInfo();
         }
         else Debug.Log("Essa já é sua capivara ativa");
     }
@@ -148,8 +161,6 @@ public class Battle : MonoBehaviour
     {
         Capybara cap = activeCapybara.GetComponent<Capybara>();
         BattleUI battleUI = FindAnyObjectByType<BattleUI>();
-
-        battleUI.powerPointsUI = cap.powerPoints.ToString();
 
         if (cap.canUseFirstAttack)
         {
@@ -186,5 +197,15 @@ public class Battle : MonoBehaviour
         {
             battleUI.AlternateFourthButton(false, cap.fourthAttackName, cap.fourthAttackCost.ToString());
         }
+    }
+
+    // // // // // // // // // // // // // // // // // //
+
+    void SendUIInfo()
+    {
+        Capybara capybara = activeCapybara.GetComponent<Capybara>();
+        BattleUI battleUI = FindAnyObjectByType<BattleUI>();
+
+        battleUI.UpdateUICard(capybara.capybaraName, capybara.capybaraLevel, capybara.health, capybara.maxHealth, capybara.powerPoints, capybara.maxPowerPoints);
     }
 }

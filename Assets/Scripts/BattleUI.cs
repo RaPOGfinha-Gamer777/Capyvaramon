@@ -8,7 +8,10 @@ public class BattleUI : MonoBehaviour
 {
     public GameObject[] attackButtons;
 
-    public string powerPointsUI;
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI levelText;
+    public TextMeshProUGUI healthText;
+    public TextMeshProUGUI powerText;
 
     public void AlternateFirstButton(bool canUse, string attackName, string attackCost)
     {
@@ -16,7 +19,7 @@ public class BattleUI : MonoBehaviour
 
         if (canUse)
         {
-            attackButtons[0].GetComponentInChildren<TextMeshProUGUI>().text = attackName + ": " + attackCost + "/" + powerPointsUI;
+            attackButtons[0].GetComponentInChildren<TextMeshProUGUI>().text = attackName + ": " + attackCost;
         }
     }
 
@@ -48,5 +51,13 @@ public class BattleUI : MonoBehaviour
         {
             attackButtons[3].GetComponentInChildren<TextMeshProUGUI>().text = attackName + ": " + attackCost;
         }
+    }
+
+    public void UpdateUICard(string name, int level, int health, int maxHealth, int power, int maxPower)
+    {
+        nameText.text = name;
+        levelText.text = "Lv: " + level.ToString();
+        healthText.text = "HP: " + health.ToString() + "/" + maxHealth.ToString();
+        powerText.text = "PP: " + power.ToString() + "/" + maxPower.ToString();
     }
 }

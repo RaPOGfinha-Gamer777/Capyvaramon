@@ -12,6 +12,7 @@ public class WildData : MonoBehaviour
     public string dataType;
     public string dataState;
     public int dataHealth;
+    public int dataMaxHealth;
     public int dataStrenght;
     public int dataSpeed;
     public int dataLevel;
@@ -58,6 +59,7 @@ public class WildData : MonoBehaviour
             dataType = other.type;
             dataState = other.state;
             dataHealth = other.health;
+            dataMaxHealth = other.maxHealth;
             dataStrenght = other.strenght;
             dataSpeed = other.speed;
 
@@ -145,6 +147,7 @@ public class WildData : MonoBehaviour
             dataType = null;
             dataState = null;
             dataHealth = 0;
+            dataMaxHealth = 0;
             dataStrenght = 0;
             dataSpeed = 0;
             dataWeaknessMultiplier = 0;

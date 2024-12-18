@@ -13,6 +13,7 @@ public class Capybara : MonoBehaviour
     public string capybaraName; // caso de tempo de customizar o nome
     public string type; // elemento
     public string state; // se e selvagem, do jogador ou de treinador
+    public int maxHealth;
     public int health; // vida
     public int strenght; // força no ataque
     public int speed; // pra ver quem inicia na batalha
@@ -136,6 +137,7 @@ public class Capybara : MonoBehaviour
         this.capybaraName = WildData.instance.dataName;
         this.type = WildData.instance.dataType;
         this.health = WildData.instance.dataHealth;
+        this.maxHealth = WildData.instance.dataMaxHealth;
         this.state = WildData.instance.dataState;
         this.strenght = WildData.instance.dataStrenght;
         this.speed = WildData.instance.dataSpeed;
