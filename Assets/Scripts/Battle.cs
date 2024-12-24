@@ -35,7 +35,6 @@ public class Battle : MonoBehaviour
         if (activeCapybara != null)
         {
             Capybara activeCap = activeCapybara.GetComponent<Capybara>();
-            SendEffectivenessText("What will " + activeCap.capybaraName + " do?");
 
             CheckActiveAttacks();
             SendUIInfo();
@@ -139,6 +138,8 @@ public class Battle : MonoBehaviour
 
             CheckActiveAttacks();
             SendUIInfo();
+
+            EndTurn();
         }
         else
         {
@@ -166,6 +167,9 @@ public class Battle : MonoBehaviour
 
             CheckActiveAttacks();
             SendUIInfo();
+
+            EndTurn();
+
         }
         else
         {
@@ -193,6 +197,8 @@ public class Battle : MonoBehaviour
 
             CheckActiveAttacks();
             SendUIInfo();
+
+            EndTurn();
         }
         else
         {
@@ -322,6 +328,7 @@ public class Battle : MonoBehaviour
         capybara.resistance = 0;      
         enemy.resistance = 0;
 
-        // chama funcao do script TurnController
+        TurnController turnController = FindAnyObjectByType<TurnController>();
+        turnController.AlternateTurn();
     }
 }

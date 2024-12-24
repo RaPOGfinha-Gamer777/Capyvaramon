@@ -13,6 +13,8 @@ public class BattleUI : MonoBehaviour
 
     public GameObject optionsTab;
 
+    public GameObject introPanel;
+
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI healthText;
@@ -34,6 +36,13 @@ public class BattleUI : MonoBehaviour
         {
             teamButtons[i].SetActive(true);
         }
+
+        Invoke(nameof(DeactivateIntroPanel), 2);
+    }
+
+    void DeactivateIntroPanel()
+    {
+        introPanel.SetActive(false);
     }
 
     public void AlternateFirstButton(bool canUse, string attackName, string attackCost)
