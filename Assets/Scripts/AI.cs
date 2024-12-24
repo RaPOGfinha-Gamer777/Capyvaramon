@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class AI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    Capybara thisCapybara;
+    Capybara playersCapybara;
+
+    private void Start()
     {
-        
+        thisCapybara = GetComponent<Capybara>();
+
+        Battle battle = FindAnyObjectByType<Battle>();
+
+        if (battle.activeCapybara != null) playersCapybara = battle.activeCapybara.GetComponent<Capybara>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void CheckEnemyConditions()
     {
-        
+
     }
 }

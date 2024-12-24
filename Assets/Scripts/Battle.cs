@@ -143,7 +143,7 @@ public class Battle : MonoBehaviour
         }
         else
         {
-            SendOutputText("This is already your active capybara!");
+            SendOutputText("This is already your active thisCapybara!");
             SendEffectivenessText("");
         }
     }
@@ -173,7 +173,7 @@ public class Battle : MonoBehaviour
         }
         else
         {
-            SendOutputText("This is already your active capybara!");
+            SendOutputText("This is already your active thisCapybara!");
             SendEffectivenessText("");
         }
     }
@@ -202,7 +202,7 @@ public class Battle : MonoBehaviour
         }
         else
         {
-            SendOutputText("This is already your active capybara!");
+            SendOutputText("This is already your active thisCapybara!");
             SendEffectivenessText("");
         }
     }

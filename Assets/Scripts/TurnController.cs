@@ -6,30 +6,39 @@ public class TurnController : MonoBehaviour
 {
     public bool isPlayersTurn;
 
+    Capybara active;
+    Capybara enemy;
+
+    Battle battle;
+    BattleUI battleUI;
+
     private void Start()
     {
+        battle = FindAnyObjectByType<Battle>();
+        battleUI = FindAnyObjectByType<BattleUI>();
+
         Invoke(nameof(CheckCapybaraSpeed), 0.15f);
     }
 
     void CheckCapybaraSpeed()
     {
-        Battle battle = FindAnyObjectByType<Battle>();
-        BattleUI battleUI = FindAnyObjectByType<BattleUI>();
+        battle = FindAnyObjectByType<Battle>();
+        battleUI = FindAnyObjectByType<BattleUI>();
 
         if (battle.activeCapybara != null)
         {
-            Capybara active = battle.activeCapybara.GetComponent<Capybara>();
-            Capybara enemy = battle.activeEnemy.GetComponent<Capybara>();
+            active = battle.activeCapybara.GetComponent<Capybara>();
+            enemy = battle.activeEnemy.GetComponent<Capybara>();
 
             if (active.speed >= enemy.speed)
             {
-                battleUI.optionsTab.SetActive(true);
-                battleUI.UpdateEffectivenessText("What will " + active.capybaraName + " do?");
+                isPlayersTurn = true;
+                StartPlayersTurn(battle, battleUI, active);
             }
             else
             {
-                battleUI.optionsTab.SetActive(false);
-                battleUI.UpdateEffectivenessText("(" + enemy.capybaraName + " will go first" + ")");
+                isPlayersTurn = false;
+                StartEnemysTurn(battle, battleUI, enemy);
             }
         }
     }
@@ -38,5 +47,23 @@ public class TurnController : MonoBehaviour
     {
         isPlayersTurn = !isPlayersTurn;
 
+        if (isPlayersTurn) StartPlayersTurn(battle, battleUI, active);
+        else StartEnemysTurn(battle, battleUI, enemy);
+    }
+
+    void StartPlayersTurn(Battle battle, BattleUI battleUI, Capybara capybara)
+    {
+        capybara = battle.activeCapybara.GetComponent<Capybara>();
+
+        battleUI.optionsTab.SetActive(true);
+        battleUI.UpdateEffectivenessText("What will " + capybara.capybaraName + " do?");
+    }
+
+    void StartEnemysTurn(Battle battle, BattleUI battleUI, Capybara capybara)
+    {
+        capybara = battle.activeEnemy.GetComponent<Capybara>();
+
+        battleUI.optionsTab.SetActive(false);
+        battleUI.UpdateEffectivenessText("(" + capybara.capybaraName + " is deciding what to do" + ")");
     }
 }
