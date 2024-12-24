@@ -69,6 +69,26 @@ public class Capybara : MonoBehaviour
 
         BattleUI battleUI = FindAnyObjectByType<BattleUI>();
         battleUI.UpdateOutputText(capybaraName + " used " + firstAttackName + "!");
+
+        Battle battle = FindAnyObjectByType<Battle>();
+        Capybara other;
+
+        if (this.state == "Players")
+        {
+            other = battle.activeEnemy.GetComponent<Capybara>();
+
+            other.TakeDamage(this.strenght, this.weaknessMultiplier, this.resistance);
+        }
+        else if (this.state == "Wild")
+        {
+            other = battle.activeCapybara.GetComponent<Capybara>();
+
+            other.TakeDamage(this.strenght, this.weaknessMultiplier, this.resistance);
+        }
+
+        this.powerPoints -= this.firstAttackCost;
+
+        SendDamageEffectivenessText(this.weaknessMultiplier, this.resistance);
     }
 
     public virtual void UseSecondAttack()
@@ -112,7 +132,7 @@ public class Capybara : MonoBehaviour
         return damage;
     }
 
-    private void Faint()
+    void Faint()
     {
         BattleUI battleUI = FindAnyObjectByType<BattleUI>();
         battleUI.UpdateOutputText(capybaraName + " was knocked out!");

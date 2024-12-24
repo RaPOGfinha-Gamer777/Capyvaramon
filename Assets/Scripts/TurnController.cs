@@ -65,5 +65,8 @@ public class TurnController : MonoBehaviour
 
         battleUI.optionsTab.SetActive(false);
         battleUI.UpdateEffectivenessText("(" + capybara.capybaraName + " is deciding what to do" + ")");
+
+        AI ai = battle.activeEnemy.GetComponent<AI>();
+        ai.CheckThisConditions();
     }
 }

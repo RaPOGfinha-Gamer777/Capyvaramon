@@ -17,30 +17,11 @@ public class Normal : Capybara
     public override void UseFirstAttack()
     {
         base.UseFirstAttack();
-
-        Battle battle = FindAnyObjectByType<Battle>();
-        Capybara other = battle.activeEnemy.GetComponent<Capybara>();
-
-        this.powerPoints -= this.firstAttackCost;
-
-        SendDamageEffectivenessText(this.weaknessMultiplier, this.resistance);
-
-        other.TakeDamage(this.strenght, this.weaknessMultiplier, this.resistance);
     }
 
     public override void UseSecondAttack()
     {
         base.UseSecondAttack();
-
-        Battle battle = FindAnyObjectByType<Battle>();
-        Capybara other = battle.activeEnemy.GetComponent<Capybara>();
-
-        this.powerPoints -= this.secondAttackCost;
-
-        SendDamageEffectivenessText(this.weaknessMultiplier, this.resistance);
-
-        int damage = CalculateDamage(this.strenght, 0.75f);
-        other.TakeDamage(damage, this.weaknessMultiplier, this.resistance);
     }
 
     public override void UseThirdAttack()
