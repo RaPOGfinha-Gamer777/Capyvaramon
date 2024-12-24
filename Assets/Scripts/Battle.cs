@@ -5,6 +5,7 @@ using UnityEngine;
 public class Battle : MonoBehaviour
 {
     public GameObject[] teamSprites; // sprites das capivaras na cena de batalha
+    // array do time inimigo
     private GameObject activeSprite; // sprite ativa
 
     public GameObject activeCapybara;
@@ -27,6 +28,7 @@ public class Battle : MonoBehaviour
 
         activeEnemy = GameObject.FindGameObjectWithTag("Enemy");
         Capybara cap = activeEnemy.GetComponent<Capybara>();
+        SendEnemyUIInfo();
 
         SendOutputText("A wild " + cap.capybaraName + " appeared!");
 
@@ -48,6 +50,7 @@ public class Battle : MonoBehaviour
         {
             cap.UseFirstAttack();
             SendUIInfo();
+            SendEnemyUIInfo();
 
             EndTurn();
         }
@@ -66,7 +69,8 @@ public class Battle : MonoBehaviour
         {
             cap.UseSecondAttack();
             SendUIInfo();
-            
+            SendEnemyUIInfo();
+
             EndTurn();
         }
         else
@@ -84,7 +88,8 @@ public class Battle : MonoBehaviour
         {
             cap.UseThirdAttack();
             SendUIInfo();
-            
+            SendEnemyUIInfo();
+
             EndTurn();
         }
         else
@@ -102,7 +107,8 @@ public class Battle : MonoBehaviour
         {
             cap.UseFourthAttack();
             SendUIInfo();
-            
+            SendEnemyUIInfo();
+
             EndTurn();
         }
         else
@@ -241,12 +247,47 @@ public class Battle : MonoBehaviour
 
     // // // // // // // // // // // // // // // // // //
 
+    public void DeactivateCapybara(Capybara capybara)
+    {
+        SpriteRenderer spriteRenderer = capybara.GetComponent<SpriteRenderer>();
+
+        if (spriteRenderer != null)
+        {
+            capybara.gameObject.SetActive(false);
+
+            // adicionar if que verifica se todo time inimigo esta nocauteado
+
+            // adicionar if que verifica se o inimigo era uma capivara selvagem ou um treinador
+            SendOutputText(capybara.capybaraName + " was defeated!");
+            SendEffectivenessText("Congratulations!");
+
+            BattleUI battleUI = FindAnyObjectByType<BattleUI>();
+            battleUI.QuitAfterCaptureOrBattleEnd();
+        }
+        else
+        {
+            activeCapybara.SetActive(false);
+        }
+
+        // GetComponent no animator e play na animacao
+    }
+
+    // // // // // // // // // // // // // // // // //
+
     void SendUIInfo()
     {
         Capybara capybara = activeCapybara.GetComponent<Capybara>();
         BattleUI battleUI = FindAnyObjectByType<BattleUI>();
 
         battleUI.UpdateUICard(capybara.capybaraName, capybara.capybaraLevel, capybara.health, capybara.maxHealth, capybara.powerPoints, capybara.maxPowerPoints);
+    }
+
+    void SendEnemyUIInfo()
+    {
+        Capybara capybara = activeEnemy.GetComponent<Capybara>();
+        BattleUI battleUI = FindAnyObjectByType<BattleUI>();
+
+        battleUI.UpdateEnemyUICard(capybara.capybaraName, capybara.capybaraLevel, capybara.health, capybara.maxHealth, capybara.powerPoints, capybara.maxPowerPoints);
     }
 
     void SendOutputText(string output)
@@ -281,7 +322,6 @@ public class Battle : MonoBehaviour
         capybara.resistance = 0;      
         enemy.resistance = 0;
 
-        // se tiver queimado, recebe dano
-        // se tiver paralizado, pula a vez
+        // chama funcao do script TurnController
     }
 }

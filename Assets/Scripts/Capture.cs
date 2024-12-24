@@ -51,7 +51,7 @@ public class Capture : MonoBehaviour
         battleUI.UpdateOutputText(capybara.capybaraName + " was caught!");
         battleUI.UpdateEffectivenessText("Congratulations!");
 
-        battleUI.QuitAfterCapture();
+        battleUI.QuitAfterCaptureOrBattleEnd();
 
         playerData.allCapybaras.Add(emptyCapybara);
         if (playerData.teamCapybaras.Count < 3) playerData.teamCapybaras.Add(emptyCapybara); // 3 e o limite decapivaras no time

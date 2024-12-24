@@ -18,6 +18,11 @@ public class BattleUI : MonoBehaviour
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI powerText;
 
+    public TextMeshProUGUI enemyNameText;
+    public TextMeshProUGUI enemyLevelText;
+    public TextMeshProUGUI enemyHealthText;
+    public TextMeshProUGUI enemyPowerText;
+
     public TextMeshProUGUI outputText;
     public TextMeshProUGUI effectivenessText;
 
@@ -81,6 +86,14 @@ public class BattleUI : MonoBehaviour
         powerText.text = "PP: " + power.ToString() + "/" + maxPower.ToString();
     }
 
+    public void UpdateEnemyUICard(string name, int level, int health, int maxHealth, int power, int maxPower)
+    {
+        enemyNameText.text = name;
+        enemyLevelText.text = "Lv: " + level.ToString();
+        enemyHealthText.text = "HP: " + health.ToString() + "/" + maxHealth.ToString();
+        enemyPowerText.text = "PP: " + power.ToString() + "/" + maxPower.ToString();
+    }
+
     public void UpdateOutputText(string output)
     {
         OpenOutputTab();
@@ -108,7 +121,7 @@ public class BattleUI : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
-    public void QuitAfterCapture()
+    public void QuitAfterCaptureOrBattleEnd()
     {
         optionsTab.gameObject.SetActive(false);
         Invoke(nameof(RunAway), 3); // tempo da musica de captura

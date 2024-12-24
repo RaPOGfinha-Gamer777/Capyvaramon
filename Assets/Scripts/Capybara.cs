@@ -101,6 +101,8 @@ public class Capybara : MonoBehaviour
     {
         health -= (damage * multiplier) - resist;
         isFainted = health <= 0;
+
+        if (isFainted) Invoke(nameof(Faint), 2.5f);
     }
 
     protected int CalculateDamage(int strenght, float multiplier) // 0.75x para segundo ataque e 1.5x para terceiro ataque
@@ -108,6 +110,16 @@ public class Capybara : MonoBehaviour
         float floatDamage = strenght * multiplier;
         int damage = Mathf.RoundToInt(floatDamage);
         return damage;
+    }
+
+    private void Faint()
+    {
+        BattleUI battleUI = FindAnyObjectByType<BattleUI>();
+        battleUI.UpdateOutputText(capybaraName + " was knocked out!");
+        battleUI.UpdateEffectivenessText("");
+
+        Battle battle = FindAnyObjectByType<Battle>();
+        battle.DeactivateCapybara(this);
     }
 
     protected void SendDamageEffectivenessText(int weaknessMult, int resistance)
