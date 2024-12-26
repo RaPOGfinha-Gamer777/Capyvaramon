@@ -101,16 +101,35 @@ MonoBehaviour:
   capybaraName: 
   type: 
   state: 
+  maxHealth: 0
   health: 0
   strenght: 0
   speed: 0
   weaknessMultiplier: 1
-  resistence: 0
+  resistance: 0
   capybaraLevel: 1
   capybaraXP: 0
+  isFainted: 0
+  isBurned: 0
+  isParalyzed: 0
+  firstAttackName: 
+  secondAttackName: Tackle
+  thirdAttackName: 
+  fourthAttackName: 
+  firstAttackType: 
+  secondAttackType: Normal
+  thirdAttackType: 
+  fourthAttackType: 
   canUseFirstAttack: 0
   canUseSecondAttack: 0
   canUseThirdAttack: 0
+  canUseFourthAttack: 0
+  firstAttackCost: 0
+  secondAttackCost: 0
+  thirdAttackCost: 0
+  fourthAttackCost: 0
+  powerPoints: 0
+  maxPowerPoints: 0
 --- !u!114 &-1599686104169914464
 MonoBehaviour:
   m_ObjectHideFlags: 0

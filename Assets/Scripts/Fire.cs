@@ -18,7 +18,7 @@ public class Fire : Capybara
     public override void UseFirstAttack()
     {
         base.UseFirstAttack();
-        
+
         Battle battle = FindAnyObjectByType<Battle>();
         Capybara other = battle.activeEnemy.GetComponent<Capybara>();
 

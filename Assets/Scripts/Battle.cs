@@ -272,7 +272,7 @@ public class Battle : MonoBehaviour
         }
         else
         {
-            activeCapybara.SetActive(false);
+            activeSprite.SetActive(false);
         }
 
         // GetComponent no animator e play na animacao

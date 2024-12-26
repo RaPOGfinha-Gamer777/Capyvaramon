@@ -69,26 +69,6 @@ public class Capybara : MonoBehaviour
 
         BattleUI battleUI = FindAnyObjectByType<BattleUI>();
         battleUI.UpdateOutputText(capybaraName + " used " + firstAttackName + "!");
-
-        Battle battle = FindAnyObjectByType<Battle>();
-        Capybara other;
-
-        if (this.state == "Players")
-        {
-            other = battle.activeEnemy.GetComponent<Capybara>();
-
-            other.TakeDamage(this.strenght, this.weaknessMultiplier, this.resistance);
-        }
-        else if (this.state == "Wild")
-        {
-            other = battle.activeCapybara.GetComponent<Capybara>();
-
-            other.TakeDamage(this.strenght, this.weaknessMultiplier, this.resistance);
-        }
-
-        this.powerPoints -= this.firstAttackCost;
-
-        SendDamageEffectivenessText(this.weaknessMultiplier, this.resistance);
     }
 
     public virtual void UseSecondAttack()
@@ -122,7 +102,11 @@ public class Capybara : MonoBehaviour
         health -= (damage * multiplier) - resist;
         isFainted = health <= 0;
 
-        if (isFainted) Invoke(nameof(Faint), 2.5f);
+        if (isFainted)
+        {
+            health = 0;
+            Invoke(nameof(Faint), 2.5f);
+        }
     }
 
     protected int CalculateDamage(int strenght, float multiplier) // 0.75x para segundo ataque e 1.5x para terceiro ataque
@@ -149,10 +133,12 @@ public class Capybara : MonoBehaviour
         if (weaknessMult > 1)
         {
             battleUI.UpdateEffectivenessText("VERY EFFECTIVE!");
+            Debug.Log("fraqueza");
         }
         if (resistance == 30)
         {
             battleUI.UpdateEffectivenessText("NOT VERY EFFECTIVE!");
+            Debug.Log("resistencia");
         }
         else if (resistance == 0 && weaknessMult == 1)
         {
