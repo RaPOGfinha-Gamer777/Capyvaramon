@@ -61,7 +61,7 @@ public class Capybara : MonoBehaviour
         }
     }
 
-    // /////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
 
     public virtual void UseFirstAttack()
     {
@@ -69,6 +69,8 @@ public class Capybara : MonoBehaviour
 
         BattleUI battleUI = FindAnyObjectByType<BattleUI>();
         battleUI.UpdateOutputText(capybaraName + " used " + firstAttackName + "!");
+
+        powerPoints -= firstAttackCost;
     }
 
     public virtual void UseSecondAttack()
@@ -77,6 +79,8 @@ public class Capybara : MonoBehaviour
 
         BattleUI battleUI = FindAnyObjectByType<BattleUI>();
         battleUI.UpdateOutputText(capybaraName + " used " + secondAttackName + "!");
+
+        powerPoints -= secondAttackCost;
     }
 
     public virtual void UseThirdAttack()
@@ -85,6 +89,8 @@ public class Capybara : MonoBehaviour
 
         BattleUI battleUI = FindAnyObjectByType<BattleUI>();
         battleUI.UpdateOutputText(capybaraName + " used " + thirdAttackName + "!");
+
+        powerPoints -= thirdAttackCost;
     }
 
     public virtual void UseFourthAttack()
@@ -93,9 +99,29 @@ public class Capybara : MonoBehaviour
 
         BattleUI battleUI = FindAnyObjectByType<BattleUI>();
         battleUI.UpdateOutputText(capybaraName + " used " + fourthAttackName + "!");
+
+        powerPoints -= fourthAttackCost;
     }
 
     // // /// // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+    protected Capybara CheckOpp()
+    {
+        Battle battle = FindAnyObjectByType<Battle>();
+        Capybara other;
+
+        if (this.state == "Players")
+        {
+            other = battle.activeEnemy.GetComponent<Capybara>();
+            return other;
+        }
+        else if (this.state == "Wild")
+        {
+            other = battle.activeCapybara.GetComponent<Capybara>();
+            return other;
+        }
+        else return null;
+    }
 
     public virtual void TakeDamage(int  damage, int multiplier, int resist)
     {
@@ -143,6 +169,7 @@ public class Capybara : MonoBehaviour
         else if (resistance == 0 && weaknessMult == 1)
         {
             battleUI.UpdateEffectivenessText("");
+            Debug.Log("nada");
         }
     }
 

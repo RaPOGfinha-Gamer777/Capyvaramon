@@ -18,23 +18,10 @@ public class Normal : Capybara
     {
         base.UseFirstAttack();
 
-        Battle battle = FindAnyObjectByType<Battle>();
         Capybara other;
 
-        if (this.state == "Players")
-        {
-            other = battle.activeEnemy.GetComponent<Capybara>();
-
-            other.TakeDamage(this.strenght, this.weaknessMultiplier, this.resistance);
-        }
-        else if (this.state == "Wild")
-        {
-            other = battle.activeCapybara.GetComponent<Capybara>();
-
-            other.TakeDamage(this.strenght, this.weaknessMultiplier, this.resistance);
-        }
-
-        this.powerPoints -= this.firstAttackCost;
+        other = CheckOpp();
+        other.TakeDamage(this.strenght, this.weaknessMultiplier, this.resistance);
 
         SendDamageEffectivenessText(this.weaknessMultiplier, this.resistance);
     }
@@ -43,30 +30,26 @@ public class Normal : Capybara
     {
         base.UseSecondAttack();
 
-        Battle battle = FindAnyObjectByType<Battle>();
-        Capybara other = battle.activeEnemy.GetComponent<Capybara>();
+        Capybara other;
 
-        this.powerPoints -= this.secondAttackCost;
-
-        SendDamageEffectivenessText(this.weaknessMultiplier, this.resistance);
-
+        other = CheckOpp();
         int damage = CalculateDamage(this.strenght, 0.75f);
         other.TakeDamage(damage, this.weaknessMultiplier, this.resistance);
+
+        SendDamageEffectivenessText(this.weaknessMultiplier, this.resistance);
     }
 
     public override void UseThirdAttack()
     {
         base.UseThirdAttack();
 
-        Battle battle = FindAnyObjectByType<Battle>();
-        Capybara other = battle.activeEnemy.GetComponent<Capybara>();
+        Capybara other;
 
-        this.powerPoints -= this.thirdAttackCost;
-
-        SendDamageEffectivenessText(this.weaknessMultiplier, this.resistance);
-
+        other = CheckOpp();
         int damage = CalculateDamage(this.strenght, 1.5f);
         other.TakeDamage(damage, this.weaknessMultiplier, this.resistance);
+
+        SendDamageEffectivenessText(this.weaknessMultiplier, this.resistance);
     }
 
     public override void UseFourthAttack()
